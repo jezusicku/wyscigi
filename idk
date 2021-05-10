@@ -1,1 +1,15 @@
 
+1. Co udało nam się zrobić:
+  -zrobiliśmy research, który pozwolił nam ustalić na czym będzie polegać gra oraz jak wyglądać;
+  -stworzyliśmy repozytorium;
+  -wybraliśmy wizję i mechanikę gry. 
+Będzie ona polegała na przemieszczaniem się samochodem po drodze i wymijaniu kolejnych przeszkód, 
+w raz ze zwiększającym się dystansem będzie także wzrastać poziom trudności oraz prędkość. Wynik będzie zależał od liczby przejechanego dystansu. 
+Droga będzie powiedzmy 3 pasmowa a będziemy mieli zawsze co najmniej jedną lukę na bezpieczny przejazd.
+
+2. Z czym mieliśmy problemy:Nad wyborem sposobu wyświetlania gry czy będziemy korzystać z wbudowanych bibliotek czy z dodatkowych narzędzi,
+bądź też języka graficznego. Prawdopodobnie posłużymy się SFMLem o ile to wgl jest dozwolone.
+3.Co sprawiło nam największą trudność:
+  -graficzny aspekt gry.
+4. Plany na najbliższy tydzień:
+  -wybór graficznej wizji gry; przygotowanie planu aplikacji oraz zarysu konstrukcji kodu.
