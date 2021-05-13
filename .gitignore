@@ -102,3 +102,4 @@ fabric.properties
 /cmake_modules/
 /cmake_build/
 /cmake_build_debug/
+/.idea/
