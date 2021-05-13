@@ -4,7 +4,7 @@
   -stworzyliśmy repozytorium;
   -wybraliśmy wizję i mechanikę gry. 
 Będzie ona polegała na przemieszczaniem się samochodem po drodze i wymijaniu kolejnych przeszkód, 
-w raz ze zwiększającym się dystansem będzie także wzrastać poziom trudności oraz prędkość. Wynik będzie zależał od liczby przejechanego dystansu. 
+w raz ze zwiększającym się dystansem będzie także wzrastać poziom trudności oraz prędkość. Wynik będzie zależał od przejechanego dystansu. 
 Droga będzie powiedzmy 3 pasmowa a będziemy mieli zawsze co najmniej jedną lukę na bezpieczny przejazd.
 
 2. Z czym mieliśmy problemy:Nad wyborem sposobu wyświetlania gry czy będziemy korzystać z wbudowanych bibliotek czy z dodatkowych narzędzi,
