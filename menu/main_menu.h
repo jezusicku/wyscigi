@@ -13,6 +13,7 @@ private:
 
     sf::Font font;
     sf::Text newGameText;
+    sf::Text creditsText;
     sf::Text exitText;
 
 public:

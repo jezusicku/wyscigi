@@ -8,6 +8,7 @@ private:
     sf::RenderWindow* window;
     float position;
     float speed;
+    float rotation;
     sf::Texture texture;
     sf::Sprite sprite;
 

@@ -15,16 +15,24 @@ MainMenu::MainMenu() {
     newGameText.setStyle(sf::Text::Bold);
     newGameText.setPosition(50, 50);
 
+    creditsText.setFont(font);
+    creditsText.setString("Credits");
+    creditsText.setCharacterSize(32);
+    creditsText.setFillColor(sf::Color::Green);
+    creditsText.setStyle(sf::Text::Bold);
+    creditsText.setPosition(50, 150);
+
     exitText.setFont(font);
     exitText.setString("Exit");
     exitText.setCharacterSize(32);
     exitText.setFillColor(sf::Color::Green);
     exitText.setStyle(sf::Text::Bold);
-    exitText.setPosition(50, 150);
+    exitText.setPosition(50, 250);
 }
 
 void MainMenu::display() {
     window->draw(newGameText);
+    window->draw(creditsText);
     window->draw(exitText);
 }
 
@@ -33,6 +41,8 @@ void MainMenu::update() {
         *submenu = 1;
     } else if (isClicked(exitText)) {
         *scene = -1;
+    } else if (isClicked(creditsText)) {
+        *submenu = 2;
     }
 }
 

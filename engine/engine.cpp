@@ -13,4 +13,5 @@ void Engine::display() {
 
 void Engine::update() {
     player.update();
+
 }
