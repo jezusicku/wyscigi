@@ -4,6 +4,8 @@ int main() {
 
     Settings settings;
 
+    // comment
+
     sf::VideoMode videoMode(settings.getWindowWidth(), settings.getWindowHeight());
     std::string title = "Racer";
     sf::RenderWindow window(videoMode, title);
