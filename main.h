@@ -8,6 +8,7 @@
 #include "menu/menu.cpp"
 #include "menu/main_menu.cpp"
 #include "menu/new_game_menu.cpp"
+#include "menu/credits_menu.cpp"
 
 #include "engine/player.cpp"
 #include "engine/settings.cpp"

@@ -3,6 +3,7 @@
 
 #include "main_menu.h"
 #include "new_game_menu.h"
+#include "credits_menu.h"
 #include "../engine/settings.h"
 
 //@formatter:off
@@ -12,6 +13,7 @@ class Menu {
 
     MainMenu mainMenu;
     NewGameMenu newGameMenu;
+    CreditsMenu creditsMenu;
 
 public:
     explicit Menu(Settings*);
