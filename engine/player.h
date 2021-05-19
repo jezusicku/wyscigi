@@ -17,6 +17,9 @@ public:
     void display();
     void update();
     void init(Settings *);
+    void rotationZero();
+
+    void setSpeedPlayer(const float &speedEngine);
 };
 
 #endif //PLAYER_H
