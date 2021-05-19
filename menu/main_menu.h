@@ -15,6 +15,11 @@ private:
     sf::Text newGameText;
     sf::Text creditsText;
     sf::Text exitText;
+    sf::Sprite _background;
+    sf::Texture texture;
+    sf::Sprite sprite;
+
+    sf::Sprite _play_button;
 
 public:
     MainMenu();

@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <cstring>
+#include <sstream>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
@@ -9,6 +10,7 @@
 #include "menu/main_menu.cpp"
 #include "menu/new_game_menu.cpp"
 #include "menu/credits_menu.cpp"
+#include "menu/splash.cpp"
 
 #include "engine/player.cpp"
 #include "engine/settings.cpp"

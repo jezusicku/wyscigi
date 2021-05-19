@@ -17,7 +17,7 @@ int main() {
     int *scene = settings.getScenePointer();
     bool *focus = settings.getFocusPointer();
 
-    *scene = 1; // loading game immediately (remove line to load menu)
+    *scene = 0; // 1 - load game, 0 - load menu
 
     while (window.isOpen() && *scene >= 0) {
         while (window.pollEvent(event)) {
