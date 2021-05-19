@@ -4,7 +4,7 @@ int main() {
 
     Settings settings;
 
-    sf::VideoMode videoMode(settings.getWindowWidth(), settings.getWindowHeight());
+    sf::VideoMode videoMode(1600, 1200);
     std::string title = "Racer";
     sf::RenderWindow window(videoMode, title);
     window.setFramerateLimit(60);
@@ -16,6 +16,8 @@ int main() {
     sf::Event event{};
     int *scene = settings.getScenePointer();
     bool *focus = settings.getFocusPointer();
+
+    *scene = 1; // loading game immediately (remove line to load menu)
 
     while (window.isOpen() && *scene >= 0) {
         while (window.pollEvent(event)) {

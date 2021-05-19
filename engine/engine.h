@@ -3,6 +3,7 @@
 
 #include "settings.h"
 #include "player.h"
+#include "map.h"
 
 //@formatter:off
 class Engine {
@@ -10,7 +11,9 @@ private:
     Settings *settings;
     sf::RenderWindow *window;
     int *scene;
+    float speed;
     Player player;
+    Map map;
 
 public:
     Engine(Settings *settings);
