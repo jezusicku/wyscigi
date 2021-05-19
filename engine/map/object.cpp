@@ -26,15 +26,15 @@ void Object::init(Settings *newSettings, std::string pathToTexture, float object
     texture.setRepeated(false);
 
     sprite.setTexture(texture);
-    sprite.setScale(.15f, .15f);
+    sprite.setScale(.30f, .30f);
 
-    float position;
-    if (line == 1) position = 354;
-    else if (line == 2) position = 482;
-    else if (line == 3) position = 610;
-    else if (line == 4) position = 738;
-    else position = 866;
-    sprite.setPosition(position, -128);
+    float position, shift = 5;
+    if (line == 1) position = 354 - shift;
+    else if (line == 2) position = 482 - shift;
+    else if (line == 3) position = 610 - shift;
+    else if (line == 4) position = 738 - shift;
+    else position = 866 - shift;
+    sprite.setPosition(position, -256);
 }
 
 Object *Object::getNext() {

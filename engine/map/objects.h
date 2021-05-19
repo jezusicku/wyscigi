@@ -8,6 +8,7 @@ private:
     Settings *settings;
     sf::RenderWindow *window;
     Object *head, *tail;
+    int tempLastLine;
 
 public:
     Objects();
