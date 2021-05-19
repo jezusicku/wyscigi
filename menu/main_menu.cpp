@@ -6,7 +6,8 @@ MainMenu::MainMenu() {
     scene = nullptr;
     submenu = nullptr;
 
-    if (!font.loadFromFile("../assets/fonts/Girassol-Regular.ttf")) exit(1);
+    if (!font.loadFromFile("../assets/fonts/Girassol-Regular.ttf"))
+        exit(1);
 
     newGameText.setFont(font);
     newGameText.setString("New Game");
@@ -34,16 +35,17 @@ void MainMenu::display() {
     window->draw(newGameText);
     window->draw(creditsText);
     window->draw(exitText);
+    window->draw(_background);
+    window->draw(_play_button);
 }
 
 void MainMenu::update() {
-    if (isClicked(newGameText)) {
+    if (isClicked(newGameText))
         *submenu = 1;
-    } else if (isClicked(exitText)) {
+    else if (isClicked(exitText))
         *scene = -1;
-    } else if (isClicked(creditsText)) {
+    else if (isClicked(creditsText))
         *submenu = 2;
-    }
 }
 
 void MainMenu::init(Settings *newSettings, int *newSubmenu) {

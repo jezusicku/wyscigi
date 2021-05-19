@@ -9,6 +9,7 @@ private:
     bool focus;
 
 public:
+    int temp; // TODO rename and make private
     Settings();
     void setWindowPointer(sf::RenderWindow*);
     sf::RenderWindow* getWindowPointer() const;
