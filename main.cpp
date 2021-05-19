@@ -4,7 +4,7 @@ int main() {
 
     Settings settings;
 
-    sf::VideoMode videoMode(1600, 1200);
+    sf::VideoMode videoMode(1280, 960);
     std::string title = "Racer";
     sf::RenderWindow window(videoMode, title);
     window.setFramerateLimit(60);
