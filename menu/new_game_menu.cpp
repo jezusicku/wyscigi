@@ -14,7 +14,7 @@ NewGameMenu::NewGameMenu() {
     newGameText.setCharacterSize(32);
     newGameText.setFillColor(sf::Color::Red);
     newGameText.setStyle(sf::Text::Bold);
-    newGameText.setPosition(470, 220);
+    newGameText.setPosition(470, 300);
 
     /*returnText.setFont(font);
     returnText.setString("Return");
@@ -81,35 +81,35 @@ void NewGameMenu::init(Settings *newSettings, int *newSubmenu) {
 
     this->v1.loadFromFile("../assets/cars/vehicle1-removebg-preview-2.png");
     this->sprite1.setTexture(v1);
-    this->sprite1.setPosition(50, 250);
+    this->sprite1.setPosition(100, 400);
 
     this->v2.loadFromFile("../assets/cars/vehicle2-removebg-preview-2.png");
     this->sprite2.setTexture(v2);
-    this->sprite2.setPosition(300, 250);
+    this->sprite2.setPosition(350, 400);
 
     this->v3.loadFromFile("../assets/cars/vehicle3-removebg-preview-2.png");
     this->sprite3.setTexture(v3);
-    this->sprite3.setPosition(550, 250);
+    this->sprite3.setPosition(600, 400);
 
     this->v4.loadFromFile("../assets/cars/vehicle4-removebg-preview-2.png");
     this->sprite4.setTexture(v4);
-    this->sprite4.setPosition(900, 250);
+    this->sprite4.setPosition(950, 400);
 
     this->v5.loadFromFile("../assets/cars/vehicle5-removebg-preview-2.png");
     this->sprite5.setTexture(v5);
-    this->sprite5.setPosition(50, 500);
+    this->sprite5.setPosition(100, 650);
 
     this->v6.loadFromFile("../assets/cars/vahicle6-removebg-preview-2.png");
     this->sprite6.setTexture(v6);
-    this->sprite6.setPosition(350, 500);
+    this->sprite6.setPosition(400, 650);
 
     this->v7.loadFromFile("../assets/cars/vehicle7-removebg-preview-2.png");
     this->sprite7.setTexture(v7);
-    this->sprite7.setPosition(650, 500);
+    this->sprite7.setPosition(700, 650);
 
     this->v8.loadFromFile("../assets/cars/vehicle8-removebg-preview-2.png");
     this->sprite8.setTexture(v8);
-    this->sprite8.setPosition(900, 500);
+    this->sprite8.setPosition(950, 650);
 
     this->texture_return.loadFromFile("../assets/cars/return_button-removebg-preview-2.png");
     this->sprite_return.setTexture(texture_return);

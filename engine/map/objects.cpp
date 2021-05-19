@@ -5,6 +5,7 @@ Objects::Objects() {
     this->window = nullptr;
     this->head = nullptr;
     this->tail = nullptr;
+    this->tempLastLine = -1;
 }
 
 void Objects::display() {
@@ -35,9 +36,19 @@ void Objects::init(Settings *newSettings) {
 
 void Objects::addRandomObject() {
     auto *newObject = new Object;
-    float objectSpeed = 28.f - rand() % 6;
+    float objectSpeed = 28.f - rand() % 4;
     int objectLine = rand() % 5 + 1;
-    newObject->init(settings, "../assets/cars/car.png", objectSpeed, objectLine);
+    if (objectLine == tempLastLine) objectLine++;
+    if (objectLine > 5) objectLine = 1;
+
+    std::string texture;
+    int randomTexture = rand() % 4;
+    if (randomTexture == 0) texture = "../assets/cars/carrera.png";
+    else if (randomTexture == 1) texture = "../assets/cars/ferrari.png";
+    else if (randomTexture == 2) texture = "../assets/cars/lambo.png";
+    else texture = "../assets/cars/jakis.png";
+
+    newObject->init(settings, texture, objectSpeed, objectLine);
     if (tail == nullptr) {
         head = newObject;
         tail = newObject;
