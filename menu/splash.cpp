@@ -16,7 +16,7 @@ void Splash::init(Settings *newSettings, int *newSubmenu) {
 
     this->texture.loadFromFile("../assets/cars/background-removebg-preview.png");
     this->sprite.setTexture(texture);
-    this->sprite.setPosition(120, 10);
+    this->sprite.setPosition(120, 130);
 
     submenu = newSubmenu;
 }
