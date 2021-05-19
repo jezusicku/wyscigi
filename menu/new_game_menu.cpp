@@ -69,7 +69,8 @@ void NewGameMenu::init(Settings *newSettings, int *newSubmenu) {
 
     this->gif.loadFromFile("../assets/cars/background5.png");
     this->sprite_gif.setTexture(gif);
-    this->sprite_gif.setPosition(0, 5);
+    this->sprite_gif.setPosition(0, 0);
+    this->sprite_gif.setScale(1.5f, 1.5f);
 
     //this->sprite_gif;
     //this->sprite_gif.setPosition(100, 100);
