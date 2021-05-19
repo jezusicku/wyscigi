@@ -13,5 +13,6 @@
 #include "engine/player.cpp"
 #include "engine/settings.cpp"
 #include "engine/engine.cpp"
+#include "engine/map.cpp"
 
 #endif //MAIN_H
