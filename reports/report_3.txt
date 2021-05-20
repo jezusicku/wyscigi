@@ -1,0 +1,32 @@
+1. Co udało się zrobić?
+menu głowne z możliwościa wyboru gracza
+możliwość sterowania pojazdem
+wstępne przygotowanie silnika gry do zmiany prędkości gry
+generowanie mapy (droga, pasy, trawa)
+dynamiczne generowanie i usuwanie objektów (innych pojazdów) na mapie
+
+
+
+2. Co było najtrudniejsze?
+jednoczesna praca na tych samych plikach
+zrobienie w pełni responsywnego okna
+zdobycie assetów
+
+
+
+3. Gdzie Państwo polegli?
+zrobienie w pełni responsywnego okna (z mozliwoscia dowolnego resizowania) bez "psucia się" gry
+przygotowanie własnych assetów
+znalezienie odpowiednich assetów open sourcowych
+dodanie kolizji (brak czasu na dodanie tego feature'a)
+
+
+
+4. Plany na przyszłość.
+dodanie kolizji
+zwiększanie tempa gry z upływem czasu
+wybór pojazdu wpływa na parametry kierowania
+optymalne generowanie obiektów na mapie (bez użycia pamięci dynamicznej)
+dodanie generowania specjalnych obiektów na mapie (plamy oleju itp)
+dodanie efektów dzwiękowych
+pauzowanie i wznawianie gry
