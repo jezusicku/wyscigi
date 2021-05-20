@@ -4,11 +4,12 @@ Player::Player() {
     this->window = nullptr;
     this->position = 0;
     this->rotation = 0;
-    if (!this->texture.loadFromFile("../assets/cars/lambo.png")) exit(1);
+    if (!this->texture.loadFromFile("../assets/cars/ferrari2.png")) exit(1);
     this->texture.setSmooth(true);
     this->texture.setRepeated(false);
     this->sprite.setTexture(texture);
     this->sprite.setScale(.3, .3);
+    this->sprite.setOrigin(sf::Vector2f((texture.getSize().x*.3)/2,texture.getSize().y*.3));
 }
 
 void Player::display() {
@@ -39,9 +40,9 @@ void Player::update() {
         rotation += .15;
     }
 
-    if ( rotation > 0 && position < 279) {
+    if ( rotation > 0 && position < 295) {
         position += 2 * rotation * (speed/100);
-    } else if (rotation < 0 && position > - 280) {
+    } else if (rotation < 0 && position > - 260) {
         position += 2 * rotation* (speed/100);
     }
     if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
