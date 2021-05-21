@@ -7,7 +7,7 @@ int main() {
     sf::VideoMode videoMode(1280, 960);
     std::string title = "Racer";
     sf::RenderWindow window(videoMode, title);
-    window.setFramerateLimit(60);
+    window.setVerticalSyncEnabled(true);
     settings.setWindowPointer(&window);
 
     Menu menu(&settings);
@@ -21,7 +21,7 @@ int main() {
     int *scene = settings.getScenePointer();
     bool *focus = settings.getFocusPointer();
 
-    *scene = 0; // 1 - load game, 0 - load menu
+    *scene = 1; // 1 - load game, 0 - load menu
 
     while (window.isOpen() && *scene >= 0) {
 

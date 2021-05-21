@@ -11,7 +11,8 @@ private:
     Settings *settings;
     sf::RenderWindow *window;
     int *scene;
-    float speed;
+    int speed;
+    int counter;
     Player player;
     Map map;
 
