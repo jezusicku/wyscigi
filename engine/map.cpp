@@ -57,14 +57,16 @@ void Map::display() {
 
 void Map::update() {
     objects.update();
-    counter++;
-    if (counter == 128 || counter == 256 || counter == 384 || counter == 512) objects.addRandomObject();
-    if (counter == 512) {
-        counter = 0;
+    counter += float(*speed) / 10;
+    if (counter >= 512) {
+        counter -= 512;
+        objects.addRandomObject();
     }
+
+
 }
 
-void Map::init(Settings *newSettings, float *speedPointer) {
+void Map::init(Settings *newSettings, int *speedPointer) {
     this->settings = newSettings;
     this->window = this->settings->getWindowPointer();
     this->speed = speedPointer;

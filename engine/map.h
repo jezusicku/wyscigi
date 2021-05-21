@@ -8,8 +8,8 @@ class Map {
 private:
     Settings* settings;
     sf::RenderWindow *window;
-    float *speed;
-    int counter;
+    int *speed;
+    float counter;
     Objects objects;
 
     sf::Texture grassTexture;
@@ -24,7 +24,7 @@ public:
     Map();
     void display();
     void update();
-    void init(Settings *, float *);
+    void init(Settings *, int *);
 };
 
 #endif //MAP_H
