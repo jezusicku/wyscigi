@@ -7,7 +7,7 @@ Engine::Engine(Settings *settings) {
     this->speed = 30.f;
     this->player.init(settings);
     this->player.setSpeedPlayer(speed);
-    this->map.init(settings);
+    this->map.init(settings, &speed);
 }
 
 void Engine::display() {
