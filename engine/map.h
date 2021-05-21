@@ -8,16 +8,23 @@ class Map {
 private:
     Settings* settings;
     sf::RenderWindow *window;
-    int *speed;
-    Objects objects;
-    int lines;
+    float *speed;
     int counter;
+    Objects objects;
+
+    sf::Texture grassTexture;
+    sf::RectangleShape grassShape;
+    sf::Texture asphaltTexture;
+    sf::RectangleShape asphaltShape;
+    sf::RectangleShape leftLineShape;
+    sf::RectangleShape rightLineShape;
+    sf::RectangleShape lineShapes[32];
 
 public:
     Map();
     void display();
     void update();
-    void init(Settings *);
+    void init(Settings *, float *);
 };
 
 #endif //MAP_H
