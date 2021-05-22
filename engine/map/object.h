@@ -14,9 +14,10 @@ private:
 public:
     Object();
     void display();
-    void update();
-    void init(Settings *, std::string, float, int);
-    float getYPosition();
+    void update(float);
+    void init(Settings *);
+    void create(sf::Texture *, int, float);
+    bool isVisible();
 };
 
 #endif //OBJECT_H

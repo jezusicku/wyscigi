@@ -57,19 +57,17 @@ void Map::display() {
 }
 
 void Map::update() {
-    objects.update();
-    trees.update(float(*speed) / 10);
-    counter += float(*speed) / 10;
-    if (counter >= 512) {
-        counter -= 512;
-        objects.addRandomObject();
-    }
+    float change = float(*speed) / 10;
+    objects.update(change);
+    trees.update(change);
+    counter += change;
+    if (counter >= 512) counter -= 512;
 }
 
 void Map::init(Settings *newSettings, int *speedPointer) {
-    this->settings = newSettings;
-    this->window = newSettings->getWindowPointer();
-    this->speed = speedPointer;
-    this->objects.init(settings);
-    this->trees.init(settings);
+    settings = newSettings;
+    window = newSettings->getWindowPointer();
+    speed = speedPointer;
+    objects.init(settings, speed);
+    trees.init(settings);
 }

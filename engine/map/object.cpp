@@ -10,31 +10,23 @@ void Object::display() {
     window->draw(sprite);
 }
 
-void Object::update() {
-    sprite.setPosition(sprite.getPosition().x, float(sprite.getPosition().y + speed * .1));
+void Object::update(float change) {
+    sprite.move(0.f, change - speed / 10);
 }
 
-void Object::init(Settings *newSettings, std::string pathToTexture, float objectSpeed, int line) {
-    this->settings = newSettings;
-    this->window = this->settings->getWindowPointer();
-    this->speed = objectSpeed;
+void Object::init(Settings *newSettings) {
+    settings = newSettings;
+    window = this->settings->getWindowPointer();
+}
 
-    if (!texture.loadFromFile(pathToTexture)) exit(1);
-    texture.setSmooth(true);
-    texture.setRepeated(false);
-
+void Object::create(sf::Texture *texturePointer, int line, float objectSpeed) {
+    texture = *texturePointer;
+    speed = objectSpeed;
     sprite.setTexture(texture);
-    sprite.setScale(.30f, .30f);
-
-    float position, shift = 5;
-    if (line == 1) position = 354 - shift;
-    else if (line == 2) position = 482 - shift;
-    else if (line == 3) position = 610 - shift;
-    else if (line == 4) position = 738 - shift;
-    else position = 866 - shift;
-    sprite.setPosition(position, -256);
+    sprite.setScale(.3f, .3f);
+    sprite.setPosition(345.f + float(line * 128), -256.f);
 }
 
-float Object::getYPosition() {
-    return sprite.getPosition().y;
+bool Object::isVisible() {
+    return sprite.getPosition().y > 1200;
 }
