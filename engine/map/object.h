@@ -18,6 +18,8 @@ public:
     void init(Settings *);
     void create(sf::Texture *, int, float);
     bool isVisible();
+
+    sf::Sprite *getSpritePointer();
 };
 
 #endif //OBJECT_H

@@ -4,8 +4,8 @@
 //@formatter:off
 class Player {
 private:
-    Settings* settings;
-    sf::RenderWindow* window;
+    Settings *settings;
+    sf::RenderWindow *window;
     float position;
     float speed;
     float rotation;
@@ -20,6 +20,7 @@ public:
     void rotationZero();
 
     void setSpeedPlayer(const float &speedEngine);
+    sf::Sprite *getSpritePointer();
 };
 
 #endif //PLAYER_H

@@ -58,3 +58,16 @@ void Objects::generateObjects() {
         objects[(begin + elements++) % 100].create(&textures[texture], line, objectSpeed);
     }
 }
+
+bool Objects::collide(sf::Sprite *playerSprite) {
+    for (int i = 0; i < elements; i++)
+        if (Collision::BoundingBoxTest(*playerSprite, *objects[(begin + i) % 100].getSpritePointer()))
+            if (Collision::PixelPerfectTest(*playerSprite, *objects[(begin + i) % 100].getSpritePointer()))
+                return true;
+    return false;
+}
+
+void Objects::clear() {
+    begin = 0;
+    elements = 0;
+}

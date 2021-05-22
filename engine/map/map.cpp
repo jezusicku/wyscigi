@@ -71,3 +71,12 @@ void Map::init(Settings *newSettings, int *speedPointer) {
     objects.init(settings, speed);
     trees.init(settings);
 }
+
+void Map::clear() {
+    objects.clear();
+    trees.clear();
+}
+
+bool Map::collide(sf::Sprite *playerSprite) {
+    return objects.collide(playerSprite);
+}

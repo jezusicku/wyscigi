@@ -31,6 +31,10 @@ void Engine::update() {
             speed++;
         }
         hud.update();
+        if (map.collide(player.getSpritePointer())) {
+            map.clear();
+            *scene = 0;
+        }
     } else {
         pauseMenu.update();
     }

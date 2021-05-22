@@ -28,6 +28,9 @@ public:
     void display();
     void update();
     void init(Settings *, int *);
+    void clear();
+
+    bool collide(sf::Sprite *);
 };
 
 #endif //MAP_H
