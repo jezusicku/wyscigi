@@ -13,6 +13,7 @@
 #include "menu/splash.cpp"
 #include "menu/menu.cpp"
 
+#include "engine/pause_menu.cpp"
 #include "engine/hud.cpp"
 #include "engine/player.cpp"
 #include "engine/settings.cpp"

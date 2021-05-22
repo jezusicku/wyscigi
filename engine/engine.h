@@ -14,10 +14,12 @@ private:
     int *scene;
     int speed;
     int counter;
+    bool pause;
 
     Player player;
     Map map;
     Hud hud;
+    PauseMenu pauseMenu;
 
 public:
     Engine(Settings *settings);
