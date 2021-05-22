@@ -7,8 +7,8 @@ class Objects {
 private:
     Settings *settings;
     sf::RenderWindow *window;
-    Object *head, *tail;
-    int tempLastLine;
+    Object objects[100];
+    int begin, end;
 
 public:
     Objects();
@@ -17,6 +17,5 @@ public:
     void init(Settings *);
     void addRandomObject();
 };
-
 
 #endif //OBJECTS_H

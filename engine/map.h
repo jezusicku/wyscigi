@@ -2,6 +2,7 @@
 #define MAP_H
 
 #include "map/objects.h"
+#include "map/trees.h"
 
 //@formatter:off
 class Map {
@@ -10,7 +11,6 @@ private:
     sf::RenderWindow *window;
     int *speed;
     float counter;
-    Objects objects;
 
     sf::Texture grassTexture;
     sf::RectangleShape grassShape;
@@ -19,6 +19,9 @@ private:
     sf::RectangleShape leftLineShape;
     sf::RectangleShape rightLineShape;
     sf::RectangleShape lineShapes[32];
+
+    Objects objects;
+    Trees trees;
 
 public:
     Map();
