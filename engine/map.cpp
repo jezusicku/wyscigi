@@ -52,23 +52,24 @@ void Map::display() {
         }
     }
 
+    trees.display();
     objects.display();
 }
 
 void Map::update() {
     objects.update();
+    trees.update(float(*speed) / 10);
     counter += float(*speed) / 10;
     if (counter >= 512) {
         counter -= 512;
         objects.addRandomObject();
     }
-
-
 }
 
 void Map::init(Settings *newSettings, int *speedPointer) {
     this->settings = newSettings;
-    this->window = this->settings->getWindowPointer();
+    this->window = newSettings->getWindowPointer();
     this->speed = speedPointer;
     this->objects.init(settings);
+    this->trees.init(settings);
 }

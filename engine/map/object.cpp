@@ -3,8 +3,6 @@
 Object::Object() {
     this->settings = nullptr;
     this->window = nullptr;
-    this->next = nullptr;
-    this->prev = nullptr;
     this->speed = 0;
 }
 
@@ -13,7 +11,7 @@ void Object::display() {
 }
 
 void Object::update() {
-    sprite.setPosition(sprite.getPosition().x, sprite.getPosition().y + speed * .1);
+    sprite.setPosition(sprite.getPosition().x, float(sprite.getPosition().y + speed * .1));
 }
 
 void Object::init(Settings *newSettings, std::string pathToTexture, float objectSpeed, int line) {
@@ -35,22 +33,6 @@ void Object::init(Settings *newSettings, std::string pathToTexture, float object
     else if (line == 4) position = 738 - shift;
     else position = 866 - shift;
     sprite.setPosition(position, -256);
-}
-
-Object *Object::getNext() {
-    return next;
-}
-
-void Object::setNext(Object *object) {
-    next = object;
-}
-
-Object *Object::getPrev() {
-    return prev;
-}
-
-void Object::setPrev(Object *object) {
-    prev = object;
 }
 
 float Object::getYPosition() {

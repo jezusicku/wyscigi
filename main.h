@@ -3,6 +3,7 @@
 
 #include <cstring>
 #include <sstream>
+#include <iostream>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
@@ -16,8 +17,10 @@
 #include "engine/settings.cpp"
 #include "engine/engine.cpp"
 
-#include "engine/map.cpp"
 #include "engine/map/object.cpp"
 #include "engine/map/objects.cpp"
+#include "engine/map/tree.cpp"
+#include "engine/map/trees.cpp"
+#include "engine/map.cpp"
 
 #endif //MAIN_H
