@@ -6,6 +6,7 @@
 #include <iostream>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #include "menu/main_menu.cpp"
 #include "menu/new_game_menu.cpp"
@@ -13,6 +14,7 @@
 #include "menu/splash.cpp"
 #include "menu/menu.cpp"
 
+#include "engine/collision.cpp"
 #include "engine/pause_menu.cpp"
 #include "engine/hud.cpp"
 #include "engine/player.cpp"

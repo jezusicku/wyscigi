@@ -30,3 +30,7 @@ void Object::create(sf::Texture *texturePointer, int line, float objectSpeed) {
 bool Object::isVisible() {
     return sprite.getPosition().y > 1200;
 }
+
+sf::Sprite * Object::getSpritePointer() {
+    return &sprite;
+}

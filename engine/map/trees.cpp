@@ -58,3 +58,8 @@ void Trees::generateTrees() {
         trees[(begin + elements++) % 100].create(&textures[texture], x);
     }
 }
+
+void Trees::clear() {
+    begin = 0;
+    elements = 0;
+}

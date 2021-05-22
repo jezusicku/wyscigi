@@ -19,6 +19,9 @@ public:
     void display();
     void update(float);
     void init(Settings *, int *);
+    void clear();
+
+    bool collide(sf::Sprite *);
 
 private:
     void generateObjects();

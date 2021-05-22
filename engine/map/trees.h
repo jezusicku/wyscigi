@@ -18,6 +18,7 @@ public:
     void display();
     void update(float);
     void init(Settings *);
+    void clear();
 
 private:
     void generateTrees();
