@@ -9,11 +9,13 @@ Engine::Engine(Settings *settings) {
     this->player.init(settings);
     this->player.setSpeedPlayer(speed);
     this->map.init(settings, &speed);
+    this->hud.init(settings, &speed);
 }
 
 void Engine::display() {
     map.display();
     player.display();
+    hud.display();
 }
 
 void Engine::update() {
@@ -23,4 +25,5 @@ void Engine::update() {
         counter = 0;
         speed++;
     }
+    hud.update();
 }

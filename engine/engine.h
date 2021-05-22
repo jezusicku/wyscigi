@@ -3,18 +3,21 @@
 
 #include "settings.h"
 #include "player.h"
-#include "map.h"
+#include "map/map.h"
 
 //@formatter:off
 class Engine {
 private:
     Settings *settings;
     sf::RenderWindow *window;
+
     int *scene;
     int speed;
     int counter;
+
     Player player;
     Map map;
+    Hud hud;
 
 public:
     Engine(Settings *settings);

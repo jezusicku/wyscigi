@@ -1,8 +1,8 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include "map/objects.h"
-#include "map/trees.h"
+#include "objects.h"
+#include "trees.h"
 
 //@formatter:off
 class Map {
