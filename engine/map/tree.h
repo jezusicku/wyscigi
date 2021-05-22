@@ -6,7 +6,7 @@ class Tree {
 private:
     Settings* settings;
     sf::RenderWindow *window;
-    sf::Texture *texture;
+    sf::Texture texture;
     sf::Sprite sprite;
 
 public:

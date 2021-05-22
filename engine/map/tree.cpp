@@ -3,7 +3,6 @@
 Tree::Tree() {
     this->settings = nullptr;
     this->window = nullptr;
-    this->texture = nullptr;
 }
 
 void Tree::display() {
@@ -20,8 +19,8 @@ void Tree::init(Settings *newSettings) {
 }
 
 void Tree::create(sf::Texture *texturePointer, float x) {
-    this->texture = texturePointer;
-    sprite.setTexture(*texture);
+    texture = *texturePointer;
+    sprite.setTexture(texture);
     sprite.setPosition(x, -256);
 }
 
