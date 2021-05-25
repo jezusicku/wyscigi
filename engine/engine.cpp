@@ -9,8 +9,9 @@ Engine::Engine(Settings *settings) {
     this->pause = false;
     this->end = false;
     this->score = 0;
+    this->fuel = 100;
     this->player.init(settings, &speed);
-    this->map.init(settings, &speed);
+    this->map.init(settings, &speed, &score, &fuel);
     this->hud.init(settings, &speed);
     this->pauseMenu.init(settings, &pause);
     this->endGame.init(settings, &score);
@@ -52,11 +53,12 @@ void Engine::update() {
 }
 
 void Engine::init() {
-    speed = 20;
+    speed = settings->getPlayerData().getInitSpeed();
     counter = 0;
     pause = false;
     end = false;
     score = 0;
+    fuel = settings->getPlayerData().getInitFuel();
     player.init(settings, &speed);
     map.clear();
     endGame.init(settings, &score);
