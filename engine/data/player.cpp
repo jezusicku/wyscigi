@@ -37,5 +37,4 @@ PlayersData::PlayersData() {
     players[5] = PlayerData(40, 120, 50, 50, "ferrari.png");
     players[6] = PlayerData(30, 90, 50, 50, "lambo.png");
     players[7] = PlayerData(30, 90, 50, 70, "lambo.png");
-    std::cout << players[7].getMaxFuel();
 }

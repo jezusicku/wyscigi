@@ -39,7 +39,7 @@ void Engine::update() {
     }
 
     if (!pause) {
-        map.update();
+        map.update(player.getSpritePointer());
         player.update();
         if (++counter == 200 and speed < 80) {
             counter = 0;

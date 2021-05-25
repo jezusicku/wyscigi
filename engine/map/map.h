@@ -3,6 +3,7 @@
 
 #include "objects.h"
 #include "trees.h"
+#include "fuel.h"
 
 //@formatter:off
 class Map {
@@ -13,6 +14,7 @@ private:
     int *score;
     int *fuel;
     float counter;
+    float lines[5];
 
     sf::Texture grassTexture;
     sf::RectangleShape grassShape;
@@ -24,11 +26,12 @@ private:
 
     Objects objects;
     Trees trees;
+    Fuel fuels;
 
 public:
     Map();
     void display();
-    void update();
+    void update(sf::Sprite *);
     void init(Settings *, int *, int *, int *);
     void clear();
 
