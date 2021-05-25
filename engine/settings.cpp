@@ -4,7 +4,7 @@ Settings::Settings() {
     this->windowPointer = nullptr;
     this->scene = 0;
     this->focus = true;
-    this->player = 0;
+    this->playerId = 0;
     this->init = true;
 }
 
@@ -24,12 +24,12 @@ bool *Settings::getFocusPointer() {
     return &focus;
 }
 
-void Settings::setPlayer(int newPlayer) {
-    player = newPlayer;
+void Settings::setPlayerId(int newPlayerId) {
+    playerId = newPlayerId;
 }
 
-int Settings::getPlayer() {
-    return player;
+PlayerData Settings::getPlayerData() {
+    return playersData.players[playerId];
 }
 
 void Settings::setInit(int newInit) {

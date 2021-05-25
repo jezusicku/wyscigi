@@ -14,6 +14,8 @@
 #include "menu/splash.cpp"
 #include "menu/menu.cpp"
 
+#include "engine/data/player.cpp"
+
 #include "engine/collision.cpp"
 #include "engine/pause_menu.cpp"
 #include "engine/hud.cpp"
