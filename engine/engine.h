@@ -15,16 +15,20 @@ private:
     int speed;
     int counter;
     bool pause;
+    bool end;
+    int score;
 
     Player player;
     Map map;
     Hud hud;
     PauseMenu pauseMenu;
+    EndGame endGame;
 
 public:
     Engine(Settings *settings);
     void display();
     void update();
+    void init();
 };
 
 #endif //ENGINE_H
