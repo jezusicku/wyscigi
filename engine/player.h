@@ -6,8 +6,8 @@ class Player {
 private:
     Settings *settings;
     sf::RenderWindow *window;
+    int *speed;
     float position;
-    float speed;
     float rotation;
     sf::Texture texture;
     sf::Sprite sprite;
@@ -16,10 +16,9 @@ public:
     Player();
     void display();
     void update();
-    void init(Settings *);
+    void init(Settings *, int *);
     void rotationZero();
 
-    void setSpeedPlayer(const float &speedEngine);
     sf::Sprite *getSpritePointer();
 };
 

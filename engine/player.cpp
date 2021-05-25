@@ -3,8 +3,8 @@
 Player::Player() {
     this->settings = nullptr;
     this->window = nullptr;
+    this->speed = nullptr;
     this->position = 0;
-    this->speed = 0;
     this->rotation = 0;
     if (!this->texture.loadFromFile("../assets/cars/ferrari2.png")) exit(1);
     this->texture.setSmooth(true);
@@ -45,9 +45,9 @@ void Player::update() {
     }
 
     if (rotation > 0 && position < 295) {
-        position += 2 * rotation * (speed / 100);
+        position += 2 * rotation * (float(*speed) / 100);
     } else if (rotation < 0 && position > -260) {
-        position += 2 * rotation * (speed / 100);
+        position += 2 * rotation * (float(*speed) / 100);
     }
     if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
         rotationZero();
@@ -57,15 +57,18 @@ void Player::update() {
     sprite.setRotation(rotation);
 }
 
-void Player::init(Settings *newSettings) {
+void Player::init(Settings *newSettings, int *speedPointer) {
     settings = newSettings;
     window = settings->getWindowPointer();
+    speed = speedPointer;
+
+    // tutaj nalezy przygotowac wszystkie rzeczy przed rozpoczeciem gry:
+    // wysrodkowac pojazd, zresetowac skret, wczytac teksture itp
+    // id wybranego gracza mozna uzyskac poprzez: settings->getPlayer()
+    // funkcja settings->getPlayer() zwraca inta ze zbioru {0, 1, 2, ..., 7}
 
 }
 
-void Player::setSpeedPlayer(const float &speedEngine) {
-    speed = speedEngine;
-}
 
 sf::Sprite *Player::getSpritePointer() {
     return &sprite;

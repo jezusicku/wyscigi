@@ -9,8 +9,7 @@ Engine::Engine(Settings *settings) {
     this->pause = false;
     this->end = false;
     this->score = 0;
-    this->player.init(settings);
-    this->player.setSpeedPlayer(float(speed));
+    this->player.init(settings, &speed);
     this->map.init(settings, &speed);
     this->hud.init(settings, &speed);
     this->pauseMenu.init(settings, &pause);
@@ -58,6 +57,7 @@ void Engine::init() {
     pause = false;
     end = false;
     score = 0;
+    player.init(settings, &speed);
     map.clear();
     endGame.init(settings, &score);
     settings->setInit(false);
