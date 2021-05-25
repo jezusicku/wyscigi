@@ -10,6 +10,8 @@ private:
     Settings* settings;
     sf::RenderWindow *window;
     int *speed;
+    int *score;
+    int *fuel;
     float counter;
 
     sf::Texture grassTexture;
@@ -27,7 +29,7 @@ public:
     Map();
     void display();
     void update();
-    void init(Settings *, int *);
+    void init(Settings *, int *, int *, int *);
     void clear();
 
     bool collide(sf::Sprite *);

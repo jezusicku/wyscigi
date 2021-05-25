@@ -17,6 +17,7 @@ private:
     bool pause;
     bool end;
     int score;
+    int fuel;
 
     Player player;
     Map map;

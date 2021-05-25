@@ -4,6 +4,8 @@ Map::Map() {
     this->settings = nullptr;
     this->window = nullptr;
     this->speed = nullptr;
+    this->score = nullptr;
+    this->fuel = nullptr;
     this->counter = 0;
 
     if (!grassTexture.loadFromFile("../assets/map/grass.png")) exit(1);
@@ -64,10 +66,12 @@ void Map::update() {
     if (counter >= 512) counter -= 512;
 }
 
-void Map::init(Settings *newSettings, int *speedPointer) {
+void Map::init(Settings *newSettings, int *speedPointer, int *scorePointer, int *fuelPointer) {
     settings = newSettings;
     window = newSettings->getWindowPointer();
     speed = speedPointer;
+    score = scorePointer;
+    fuel = fuelPointer;
     objects.init(settings, speed);
     trees.init(settings);
 }
