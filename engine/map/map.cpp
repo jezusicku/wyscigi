@@ -8,6 +8,12 @@ Map::Map() {
     this->fuel = nullptr;
     this->counter = 0;
 
+    lines[0] = -128;
+    lines[1] = -256;
+    lines[2] = -396;
+    lines[3] = -512;
+    lines[4] = -128;
+
     if (!grassTexture.loadFromFile("../assets/map/grass.png")) exit(1);
     grassTexture.setRepeated(true);
     grassShape.setTextureRect(sf::IntRect(0.f, 0.f, 1280.f, 1500.f));
@@ -55,13 +61,36 @@ void Map::display() {
     }
 
     trees.display();
+    fuels.display();
     objects.display();
 }
 
-void Map::update() {
+void Map::update(sf::Sprite *playerSprite) {
     float change = float(*speed) / 10;
-    objects.update(change);
+    for (int i = 0; i < 5; i++) {
+        lines[i] += change;
+        if (lines[i] > 0) {
+            std::cout << fuels.needCreate() << std::endl;
+            if (fuels.needCreate()) {
+                fuels.create(i);
+                lines[i] = float(-500 - (rand() % 500));
+            } else {
+                // TODO create sth
+                lines[i] = float(-1500 - (rand() % 500));
+            }
+        }
+    }
+
     trees.update(change);
+
+    if (fuels.isCollectable(playerSprite)) {
+        *fuel += 50;
+        fuels.collect();
+    }
+    fuels.update(change);
+
+    objects.update(change);
+
     counter += change;
     if (counter >= 512) counter -= 512;
 }
@@ -74,11 +103,18 @@ void Map::init(Settings *newSettings, int *speedPointer, int *scorePointer, int 
     fuel = fuelPointer;
     objects.init(settings, speed);
     trees.init(settings);
+    fuels.init(settings);
 }
 
 void Map::clear() {
     objects.clear();
     trees.clear();
+    fuels.clear();
+    lines[0] = -128;
+    lines[1] = -256;
+    lines[2] = -396;
+    lines[3] = -512;
+    lines[4] = -128;
 }
 
 bool Map::collide(sf::Sprite *playerSprite) {

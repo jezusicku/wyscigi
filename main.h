@@ -28,6 +28,7 @@
 #include "engine/map/objects.cpp"
 #include "engine/map/tree.cpp"
 #include "engine/map/trees.cpp"
+#include "engine/map/fuel.cpp"
 #include "engine/map/map.cpp"
 
 #endif //MAIN_H
