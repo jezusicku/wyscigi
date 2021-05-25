@@ -1,14 +1,17 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
+#include "data/player.h"
+
 //@formatter:off
 class Settings {
 private:
     sf::RenderWindow* windowPointer;
     int scene;
     bool focus;
-    int player;
+    int playerId;
     bool init;
+    PlayersData playersData;
 
 public:
     Settings();
@@ -16,8 +19,8 @@ public:
     sf::RenderWindow* getWindowPointer() const;
     int* getScenePointer();
     bool* getFocusPointer();
-    void setPlayer(int);
-    int getPlayer();
+    void setPlayerId(int);
+    PlayerData getPlayerData();
     void setInit(int);
     int getInit();
 };

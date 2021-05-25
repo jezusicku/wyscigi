@@ -64,11 +64,9 @@ void Player::init(Settings *newSettings, int *speedPointer) {
 
     // tutaj nalezy przygotowac wszystkie rzeczy przed rozpoczeciem gry:
     // wysrodkowac pojazd, zresetowac skret, wczytac teksture itp
-    // id wybranego gracza mozna uzyskac poprzez: settings->getPlayer()
-    // funkcja settings->getPlayer() zwraca inta ze zbioru {0, 1, 2, ..., 7}
-
+    // dane wybranego gracza mozna uzyskac przykładowo w poniższy sposób:
+    // settings->getPlayerData().getTexture(); (zwraca std::string)
 }
-
 
 sf::Sprite *Player::getSpritePointer() {
     return &sprite;
