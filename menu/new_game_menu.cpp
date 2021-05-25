@@ -45,21 +45,21 @@ void NewGameMenu::update() {
     else if (isSpriteClicked(sprite_return))
         *submenu = 3;
     else if (isSpriteClicked(sprite1))
-        settings->temp = 1;
+        settings->setPlayer(0);
     else if (isSpriteClicked(sprite2))
-        settings->temp = 2;
+        settings->setPlayer(1);
     else if (isSpriteClicked(sprite3))
-        settings->temp = 3;
+        settings->setPlayer(2);
     else if (isSpriteClicked(sprite4))
-        settings->temp = 4;
+        settings->setPlayer(3);
     else if (isSpriteClicked(sprite5))
-        settings->temp = 5;
+        settings->setPlayer(4);
     else if (isSpriteClicked(sprite6))
-        settings->temp = 6;
+        settings->setPlayer(5);
     else if (isSpriteClicked(sprite7))
-        settings->temp = 7;
+        settings->setPlayer(6);
     else if (isSpriteClicked(sprite8))
-        settings->temp = 8;
+        settings->setPlayer(7);
 }
 
 void NewGameMenu::init(Settings *newSettings, int *newSubmenu) {

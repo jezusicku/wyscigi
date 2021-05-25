@@ -1,9 +1,11 @@
 #include "settings.h"
 
 Settings::Settings() {
-    windowPointer = nullptr;
-    scene = 0;
-    focus = true;
+    this->windowPointer = nullptr;
+    this->scene = 0;
+    this->focus = true;
+    this->player = 0;
+    this->init = true;
 }
 
 void Settings::setWindowPointer(sf::RenderWindow *newWindowPointer) {
@@ -20,4 +22,20 @@ int *Settings::getScenePointer() {
 
 bool *Settings::getFocusPointer() {
     return &focus;
+}
+
+void Settings::setPlayer(int newPlayer) {
+    player = newPlayer;
+}
+
+int Settings::getPlayer() {
+    return player;
+}
+
+void Settings::setInit(int newInit) {
+    init = newInit;
+}
+
+int Settings::getInit() {
+    return init;
 }

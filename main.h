@@ -19,6 +19,7 @@
 #include "engine/hud.cpp"
 #include "engine/player.cpp"
 #include "engine/settings.cpp"
+#include "engine/end_game.cpp"
 #include "engine/engine.cpp"
 
 #include "engine/map/object.cpp"
