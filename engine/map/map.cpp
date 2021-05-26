@@ -7,7 +7,8 @@ Map::Map() {
     this->score = nullptr;
     this->fuel = nullptr;
     this->counter = 0;
-    this->point = 0;
+    this->scoreCounter = 0;
+    this->fuelCounter = 0;
 
     lines[0] = -rand() % 4096;
     lines[1] = -rand() % 4096;
@@ -69,10 +70,16 @@ void Map::display() {
 void Map::update(sf::Sprite *playerSprite) {
     float change = float(*speed) / 10;
 
-    point += change * change;
-    if (point > 800) {
-        point = 0;
+    scoreCounter += change * change;
+    if (scoreCounter > 800) {
+        scoreCounter = 0;
         *score += 1;
+    }
+
+    fuelCounter++;
+    if (fuelCounter > 250) {
+        fuelCounter = 0;
+        *fuel -= 1;
     }
 
     for (int i = 0; i < 5; i++) {
@@ -80,8 +87,8 @@ void Map::update(sf::Sprite *playerSprite) {
         if (lines[i] > 0) {
             int min = 0, max = -2147000000;
             for (float line : lines) {
-                if(line < min) min = line;
-                if(line > max) max = line;
+                if (line < min) min = line;
+                if (line > max) max = line;
             }
 
             if (abs(min - max) < 1000) {
@@ -122,7 +129,7 @@ void Map::init(Settings *newSettings, int *speedPointer, int *scorePointer, int 
     fuel = fuelPointer;
     objects.init(settings, speed);
     trees.init(settings);
-    fuels.init(settings);
+    fuels.init(settings, fuel);
 }
 
 void Map::clear() {
