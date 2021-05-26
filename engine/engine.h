@@ -31,6 +31,7 @@ public:
     void update();
     void init();
 
+    void swapPause();
     void ScoreCounter();
 };
 

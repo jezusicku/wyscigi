@@ -39,6 +39,10 @@ int main() {
                 if (event.mouseButton.button == sf::Mouse::Left) {
                     if (*scene == 0) menu.update();
                 }
+            } else if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::Escape) {
+                    engine.swapPause();
+                }
             }
         }
 

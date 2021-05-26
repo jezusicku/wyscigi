@@ -67,3 +67,7 @@ void Engine::init() {
     endGame.init(settings, &score);
     settings->setInit(false);
 }
+
+void Engine::swapPause() {
+    pause = !pause;
+}
