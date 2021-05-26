@@ -10,13 +10,14 @@ private:
     int maxFuel;
     int coordinateY;
     int coordinateX;
+    float scale;
     float rotationFactor;
     float acceleration;
     std::string texture;
 
 public:
     PlayerData() = default;
-    PlayerData(int, int, int, int, int, int, float, float, std::string);
+    PlayerData(int, int, int, int, int, int, float , float, float, std::string);
     int getInitSpeed();
     int getMaxSpeed();
     int getInitFuel();
@@ -25,7 +26,7 @@ public:
     std::string getTexture();
     int getCoordinateX();
     float getRotationFactor();
-
+    float getScale();
     float getAcceleration();
 };
 
