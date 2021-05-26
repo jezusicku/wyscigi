@@ -4,7 +4,7 @@ Settings::Settings() {
     this->windowPointer = nullptr;
     this->scene = 0;
     this->focus = true;
-    this->playerId = 0;
+    this->playerId = 5;
     this->init = true;
 }
 

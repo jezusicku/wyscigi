@@ -8,16 +8,22 @@ private:
     int maxSpeed;
     int initFuel;
     int maxFuel;
+    int coordinateY;
+    int coordinateX;
+    float rotationFactor;
     std::string texture;
 
 public:
     PlayerData() = default;
-    PlayerData(int, int, int, int, std::string);
+    PlayerData(int, int, int, int, int, int, float, std::string);
     int getInitSpeed();
     int getMaxSpeed();
     int getInitFuel();
     int getMaxFuel();
+    int getCoordinateY();
     std::string getTexture();
+    int getCoordinateX();
+    float getRotationFactor();
 };
 
 class PlayersData {
