@@ -45,16 +45,16 @@ void Trees::init(Settings *newSettings) {
 }
 
 void Trees::generateTrees() {
-    if (lastLeftTree > 0 && rand() % 100 < lastLeftTree) {
+    if (lastLeftTree > 0) {
         int texture = rand() % 47;
-        lastLeftTree = -70;
-        float x = float(rand() % (320 - textures[texture].getSize().y));
+        lastLeftTree = -60 - rand() % 60;
+        float x = 40 + float(rand() % (280 - textures[texture].getSize().x));
         trees[(begin + elements++) % 100].create(&textures[texture], x);
     }
-    if (lastRightTree > 0 && rand() % 100 < lastRightTree) {
+    if (lastRightTree > 0) {
         int texture = rand() % 47;
-        lastRightTree = -70;
-        float x = 960 + float(rand() % (320 - textures[texture].getSize().y));
+        lastRightTree = -60 - rand() % 60;
+        float x = 960 + float(rand() % (280 - textures[texture].getSize().x));
         trees[(begin + elements++) % 100].create(&textures[texture], x);
     }
 }
