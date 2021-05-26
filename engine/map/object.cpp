@@ -16,12 +16,13 @@ void Object::update(float change) {
 
 void Object::init(Settings *newSettings) {
     settings = newSettings;
-    window = this->settings->getWindowPointer();
+    window = settings->getWindowPointer();
 }
 
 void Object::create(sf::Texture *texturePointer, int line, float objectSpeed) {
-    texture = *texturePointer;
+    texture = sf::Texture(*texturePointer);
     speed = objectSpeed;
+    sprite = sf::Sprite();
     sprite.setTexture(texture);
     sprite.setScale(.3f, .3f);
     sprite.setPosition(345.f + float(line * 128), -256.f);

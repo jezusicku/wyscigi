@@ -70,7 +70,6 @@ void Map::update(sf::Sprite *playerSprite) {
     for (int i = 0; i < 5; i++) {
         lines[i] += change;
         if (lines[i] > 0) {
-            std::cout << fuels.needCreate() << std::endl;
             if (fuels.needCreate()) {
                 fuels.create(i);
                 lines[i] = float(-500 - (rand() % 500));
