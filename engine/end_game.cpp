@@ -5,7 +5,8 @@ EndGame::EndGame() {
     this->window = nullptr;
     this->score = nullptr;
     this->duration = 0;
-    this->step = 0;
+    this->step = -1;
+    this->place = 0;
 
     background.setPosition(.0f, .0f);
     background.setSize(sf::Vector2f(1280.f, 0.f));
@@ -42,7 +43,10 @@ void EndGame::display() {
 
 void EndGame::update() {
     duration += 20;
-    if (step == 0) {
+    if (step == -1) {
+        place = scores.setScore(settings->getPlayerId(), *score);
+        step = 0;
+    } else if (step == 0) {
         background.setSize(sf::Vector2f(1280.f, float(duration)));
     } else if (step == 1) {
         scorePlainText.move(.0f, -14.f);
@@ -58,7 +62,7 @@ void EndGame::update() {
     }
 
     if (duration > 1000) {
-        step++;
+        if (step < 4) step++;
         duration = 0;
     }
 
@@ -75,7 +79,7 @@ void EndGame::init(Settings *newSettings, int *scorePointer) {
     window = settings->getWindowPointer();
     score = scorePointer;
     duration = 0;
-    step = 0;
+    step = -1;
 
     scorePlainText.setPosition(640.f, 1000.f);
     scoreText.setPosition(640.f, 1000.f);

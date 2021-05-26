@@ -19,6 +19,7 @@ public:
     sf::RenderWindow* getWindowPointer() const;
     int* getScenePointer();
     bool* getFocusPointer();
+    int getPlayerId() const;
     void setPlayerId(int);
     PlayerData getPlayerData();
     void setInit(int);

@@ -7,6 +7,9 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <fstream>
+
+#include "engine/scores.cpp"
 
 #include "menu/main_menu.cpp"
 #include "menu/new_game_menu.cpp"

@@ -9,12 +9,15 @@ private:
     int *score;
     int duration;
     int step;
+    int place;
 
     sf::RectangleShape background;
     sf::Font font;
     sf::Text scorePlainText;
     sf::Text scoreText;
     sf::Text returnText;
+
+    Scores scores;
 
 public:
     EndGame();

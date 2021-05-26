@@ -24,6 +24,10 @@ bool *Settings::getFocusPointer() {
     return &focus;
 }
 
+int Settings::getPlayerId() const {
+    return playerId;
+}
+
 void Settings::setPlayerId(int newPlayerId) {
     playerId = newPlayerId;
 }
