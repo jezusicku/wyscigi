@@ -24,8 +24,8 @@ void Object::create(sf::Texture *texturePointer, int line, float objectSpeed) {
     speed = objectSpeed;
     sprite = sf::Sprite();
     sprite.setTexture(texture);
-    sprite.setScale(.3f, .3f);
-    sprite.setPosition(345.f + float(line * 128), -256.f);
+    sprite.setScale(.33, .33);
+    sprite.setPosition(348.f + float(line * 128), -256.f);
 }
 
 bool Object::isVisible() {

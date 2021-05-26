@@ -31,25 +31,22 @@ void Objects::init(Settings *newSettings, int *speedPointer) {
     window = settings->getWindowPointer();
     speed = speedPointer;
 
-    if (!textures[0].loadFromFile("../assets/cars/jakis.png")) exit(1);
-    if (!textures[1].loadFromFile("../assets/cars/lambo.png")) exit(1);
-    if (!textures[2].loadFromFile("../assets/cars/ferrari.png")) exit(1);
-    if (!textures[3].loadFromFile("../assets/cars/carrera.png")) exit(1);
-    textures[0].setSmooth(true);
-    textures[1].setSmooth(true);
-    textures[2].setSmooth(true);
-    textures[3].setSmooth(true);
-    textures[0].setRepeated(false);
-    textures[1].setRepeated(false);
-    textures[2].setRepeated(false);
-    textures[3].setRepeated(false);
+    for (int i = 1; i < 18; i++) {
+        std::stringstream path;
+        path << "../assets/map/objects/car_";
+        if (i < 10) path << "0";
+        path << i << ".png";
+        if (!textures[i - 1].loadFromFile(path.str())) exit(1);
+        textures[i - 1].setRepeated(false);
+        textures[i - 1].setSmooth(true);
+    }
 
     for (auto &object : objects)
         object.init(newSettings);
 }
 
 void Objects::generateObject(int line) {
-    int texture = rand() % 4;
+    int texture = rand() % 18;
     auto objectSpeed = float(float(*speed) / 2 - 5 + rand() % 10);
     objects[(begin + elements++) % 100].create(&textures[texture], line, objectSpeed);
 }

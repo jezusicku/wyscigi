@@ -91,18 +91,18 @@ void Map::update(sf::Sprite *playerSprite) {
                 if (line > max) max = line;
             }
 
-            if (abs(min - max) < 1000) {
-                lines[i] = float(-800 - (rand() % 800));
+            if (abs(min - max) < 1200) {
+                lines[i] = float(-1200 - (rand() % 600));
                 continue;
             }
 
             if (fuels.needCreate()) {
                 fuels.create(i);
                 *score += 10;
-                lines[i] = float(-800 - (rand() % 800));
+                lines[i] = float(-1200 - (rand() % 600));
             } else {
                 objects.generateObject(i);
-                lines[i] = float(-1600 - (rand() % 1600));
+                lines[i] = float(-1500 - (rand() % 1500));
             }
         }
     }
