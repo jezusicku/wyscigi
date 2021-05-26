@@ -12,7 +12,7 @@ Engine::Engine(Settings *settings) {
     this->fuel = 100;
     this->player.init(settings, &speed);
     this->map.init(settings, &speed, &score, &fuel);
-    this->hud.init(settings, &speed);
+    this->hud.init(settings, &speed, &score);
     this->pauseMenu.init(settings, &pause);
     this->endGame.init(settings, &score);
 }
@@ -23,6 +23,10 @@ void Engine::display() {
     hud.display();
     if (end) endGame.display();
     else if (pause) pauseMenu.display();
+}
+
+void Engine::ScoreCounter() {
+    score = speed;
 }
 
 void Engine::update() {
