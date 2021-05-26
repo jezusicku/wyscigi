@@ -30,6 +30,8 @@ public:
     void display();
     void update();
     void init();
+
+    void ScoreCounter();
 };
 
 #endif //ENGINE_H
