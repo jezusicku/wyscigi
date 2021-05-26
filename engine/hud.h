@@ -8,10 +8,14 @@ private:
     sf::RenderWindow *window;
     int *speed;
     int *score;
+    int *fuel;
 
     sf::Font font;
     sf::Text speedText;
     sf::Text scoreText;
+
+    sf::RectangleShape fuelShape;
+    sf::RectangleShape currentFuelShape;
 
 public:
     Hud();
