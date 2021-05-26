@@ -21,7 +21,7 @@ public:
     Hud();
     void display();
     void update();
-    void init(Settings *, int *, int *);
+    void init(Settings *, int *, int *, int *);
 };
 
 #endif //HUD_H

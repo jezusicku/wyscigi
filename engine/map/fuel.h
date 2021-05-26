@@ -8,6 +8,7 @@ private:
     sf::RenderWindow *window;
     float position;
     int counter;
+    int *fuel;
 
     sf::Texture texture;
     sf::Sprite sprite;
@@ -16,7 +17,7 @@ public:
     Fuel();
     void display();
     void update(float);
-    void init(Settings *);
+    void init(Settings *, int *);
     void clear();
     bool needCreate() const;
     void create(int);

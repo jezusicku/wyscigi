@@ -4,7 +4,8 @@ Fuel::Fuel() {
     this->settings = nullptr;
     this->window = nullptr;
     this->position = 1500.f;
-    this->counter = -5000;
+    this->counter = -2000;
+    this->fuel = nullptr;
 
     if (!texture.loadFromFile("../assets/map/fuel.png")) exit(1);
     texture.setSmooth(true);
@@ -25,14 +26,15 @@ void Fuel::update(float change) {
     counter++;
 }
 
-void Fuel::init(Settings *newSettings) {
-    this->settings = newSettings;
-    this->window = settings->getWindowPointer();
+void Fuel::init(Settings *newSettings, int *fuelPointer) {
+    settings = newSettings;
+    window = settings->getWindowPointer();
+    fuel = fuelPointer;
 }
 
 void Fuel::clear() {
     this->position = 1500.f;
-    counter = -5000;
+    counter = -2000;
 }
 
 bool Fuel::needCreate() const {
@@ -41,7 +43,7 @@ bool Fuel::needCreate() const {
 
 void Fuel::create(int fuelLine) {
     position = -200;
-    counter = -5000;
+    counter = -2000;
     sprite.setPosition(363.f + float(128 * fuelLine), position);
 }
 
@@ -57,4 +59,5 @@ bool Fuel::isCollectable(sf::Sprite *playerSprite) {
 
 void Fuel::collect() {
     position = 1500;
+    *fuel = settings->getPlayerData().getMaxFuel();
 }

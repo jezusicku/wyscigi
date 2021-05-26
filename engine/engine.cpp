@@ -12,7 +12,7 @@ Engine::Engine(Settings *settings) {
     this->fuel = 100;
     this->player.init(settings, &speed);
     this->map.init(settings, &speed, &score, &fuel);
-    this->hud.init(settings, &speed, &score);
+    this->hud.init(settings, &speed, &score, &fuel);
     this->pauseMenu.init(settings, &pause);
     this->endGame.init(settings, &score);
 }
@@ -45,14 +45,13 @@ void Engine::update() {
     if (!pause) {
         map.update(player.getSpritePointer());
         player.update();
-        if (++counter == 200*settings->getPlayerData().getAcceleration() and speed < settings->getPlayerData().getMaxSpeed()) {
+        if (++counter == 200 * settings->getPlayerData().getAcceleration() and speed < settings->getPlayerData().getMaxSpeed()) {
             counter = 0;
-            speed++ ;
+            speed++;
         }
         hud.update();
-        if (map.collide(player.getSpritePointer())) {
+        if (map.collide(player.getSpritePointer()) || fuel <= 0)
             end = true;
-        }
     } else pauseMenu.update();
 }
 
