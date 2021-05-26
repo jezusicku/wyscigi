@@ -15,11 +15,12 @@ void Tree::update(float change) {
 
 void Tree::init(Settings *newSettings) {
     this->settings = newSettings;
-    this->window = newSettings->getWindowPointer();
+    this->window = settings->getWindowPointer();
 }
 
 void Tree::create(sf::Texture *texturePointer, float x) {
-    texture = *texturePointer;
+    texture = sf::Texture(*texturePointer);
+    sprite = sf::Sprite();
     sprite.setTexture(texture);
     sprite.setPosition(x, -256);
 }
