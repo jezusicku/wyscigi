@@ -22,9 +22,7 @@ public:
     void clear();
 
     bool collide(sf::Sprite *);
-
-private:
-    void generateObjects();
+    void generateObject(int);
 };
 
 #endif //OBJECTS_H

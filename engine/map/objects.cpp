@@ -24,7 +24,6 @@ void Objects::update(float change) {
         }
     }
     lastObject += change;
-    generateObjects();
 }
 
 void Objects::init(Settings *newSettings, int *speedPointer) {
@@ -49,14 +48,10 @@ void Objects::init(Settings *newSettings, int *speedPointer) {
         object.init(newSettings);
 }
 
-void Objects::generateObjects() {
-    if (lastObject > 500 && rand() % 1200 - 200 < lastObject) {
-        int texture = rand() % 4;
-        int line = rand() % 5;
-        auto objectSpeed = float(float(*speed) / 2 - 5 + rand() % 10);
-        lastObject = -120;
-        objects[(begin + elements++) % 100].create(&textures[texture], line, objectSpeed);
-    }
+void Objects::generateObject(int line) {
+    int texture = rand() % 4;
+    auto objectSpeed = float(float(*speed) / 2 - 5 + rand() % 10);
+    objects[(begin + elements++) % 100].create(&textures[texture], line, objectSpeed);
 }
 
 bool Objects::collide(sf::Sprite *playerSprite) {
