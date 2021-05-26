@@ -22,6 +22,7 @@ int main() {
     bool *focus = settings.getFocusPointer();
 
     *scene = 1; // 1 - load game, 0 - load menu
+    srand(time(NULL));
 
     while (window.isOpen() && *scene >= 0) {
 

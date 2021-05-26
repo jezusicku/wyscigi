@@ -8,11 +8,11 @@ Map::Map() {
     this->fuel = nullptr;
     this->counter = 0;
 
-    lines[0] = -128;
-    lines[1] = -256;
-    lines[2] = -396;
-    lines[3] = -512;
-    lines[4] = -128;
+    lines[0] = -rand() % 4096;
+    lines[1] = -rand() % 4096;
+    lines[2] = -rand() % 4096;
+    lines[3] = -rand() % 4096;
+    lines[4] = -rand() % 4096;
 
     if (!grassTexture.loadFromFile("../assets/map/grass.png")) exit(1);
     grassTexture.setRepeated(true);
@@ -70,13 +70,23 @@ void Map::update(sf::Sprite *playerSprite) {
     for (int i = 0; i < 5; i++) {
         lines[i] += change;
         if (lines[i] > 0) {
-            std::cout << fuels.needCreate() << std::endl;
+            int min = 0, max = -2147000000;
+            for (float line : lines) {
+                if(line < min) min = line;
+                if(line > max) max = line;
+            }
+
+            if (abs(min - max) < 1000) {
+                lines[i] = float(-800 - (rand() % 800));
+                continue;
+            }
+
             if (fuels.needCreate()) {
                 fuels.create(i);
-                lines[i] = float(-500 - (rand() % 500));
+                lines[i] = float(-800 - (rand() % 800));
             } else {
-                // TODO create sth
-                lines[i] = float(-1500 - (rand() % 500));
+                objects.generateObject(i);
+                lines[i] = float(-1600 - (rand() % 1600));
             }
         }
     }
@@ -110,11 +120,11 @@ void Map::clear() {
     objects.clear();
     trees.clear();
     fuels.clear();
-    lines[0] = -128;
-    lines[1] = -256;
-    lines[2] = -396;
-    lines[3] = -512;
-    lines[4] = -128;
+    lines[0] = -rand() % 4096;
+    lines[1] = -rand() % 4096;
+    lines[2] = -rand() % 4096;
+    lines[3] = -rand() % 4096;
+    lines[4] = -rand() % 4096;
 }
 
 bool Map::collide(sf::Sprite *playerSprite) {
