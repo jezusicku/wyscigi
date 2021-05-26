@@ -66,7 +66,7 @@ void Player::init(Settings *newSettings, int *speedPointer) {
     rotation = 0;
     if (!(texture.loadFromFile(settings->getPlayerData().getTexture()))) exit(1);
     sprite.setTexture(texture);
-    this->sprite.setScale(.3, .3);
+    this->sprite.setScale(settings->getPlayerData().getScale(), settings->getPlayerData().getScale());
     sprite.setOrigin(sf::Vector2f((texture.getSize().x * .3) / 2, texture.getSize().y * .3));
     }
 
