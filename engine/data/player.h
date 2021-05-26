@@ -14,10 +14,11 @@ private:
     float rotationFactor;
     float acceleration;
     std::string texture;
+    std::string previewTexture;
 
 public:
     PlayerData() = default;
-    PlayerData(int, int, int, int, int, int, float , float, float, std::string);
+    PlayerData(int, int, int, int, int, int, float , float, float, std::string, std::string);
     int getInitSpeed();
     int getMaxSpeed();
     int getInitFuel();
@@ -28,6 +29,7 @@ public:
     float getRotationFactor();
     float getScale();
     float getAcceleration();
+    std::string getPreviewTexture();
 };
 
 class PlayersData {

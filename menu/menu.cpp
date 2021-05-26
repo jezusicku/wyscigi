@@ -8,6 +8,7 @@ Menu::Menu(Settings *settings) {
     newGameMenu.init(this->settings, &submenu);
     creditsMenu.init(this->settings, &submenu);
     splash.init(this->settings, &submenu);
+    statsMenu.init(this->settings, &submenu);
 }
 
 void Menu::display() {
@@ -15,6 +16,7 @@ void Menu::display() {
     else if (submenu == 1) newGameMenu.display();
     else if (submenu == 2) creditsMenu.display();
     else if (submenu == 3) splash.display();
+    else if (submenu == 4) statsMenu.display();
 }
 
 void Menu::update() {
@@ -22,4 +24,5 @@ void Menu::update() {
     else if (submenu == 1) newGameMenu.update();
     else if (submenu == 2) creditsMenu.update();
     else if (submenu == 3) splash.update();
+    else if (submenu == 4) statsMenu.update();
 }

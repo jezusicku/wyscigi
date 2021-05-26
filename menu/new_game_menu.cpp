@@ -6,8 +6,7 @@ NewGameMenu::NewGameMenu() {
     scene = nullptr;
     submenu = nullptr;
 
-    if (!font.loadFromFile("../assets/fonts/Girassol-Regular.ttf"))
-        exit(1);
+    if (!font.loadFromFile("../assets/fonts/Girassol-Regular.ttf")) exit(1);
 
     newGameText.setFont(font);
     newGameText.setString("CHOOSE YOUR PLAYER");
@@ -26,7 +25,7 @@ NewGameMenu::NewGameMenu() {
 
 void NewGameMenu::display() {
     window->draw(sprite_gif);
-    window->draw(sprite_return);
+    //window->draw(sprite_return);
     window->draw(sprite);
     window->draw(sprite1);
     window->draw(sprite2);
@@ -40,26 +39,31 @@ void NewGameMenu::display() {
 }
 
 void NewGameMenu::update() {
-    if (isSpriteClicked(sprite))
-        *scene = 1;
-    else if (isSpriteClicked(sprite_return))
-        *submenu = 3;
-    else if (isSpriteClicked(sprite1))
+    if (isSpriteClicked(sprite1)) {
         settings->setPlayerId(0);
-    else if (isSpriteClicked(sprite2))
+        *submenu = 4;
+    } else if (isSpriteClicked(sprite2)) {
         settings->setPlayerId(1);
-    else if (isSpriteClicked(sprite3))
-        settings->setPlayerId(2);
-    else if (isSpriteClicked(sprite4))
+        *submenu = 4;
+    } else if (isSpriteClicked(sprite4)) {
         settings->setPlayerId(3);
-    else if (isSpriteClicked(sprite5))
+        *submenu = 4;
+    } else if (isSpriteClicked(sprite5)) {
         settings->setPlayerId(4);
-    else if (isSpriteClicked(sprite6))
+        *submenu = 4;
+    } else if (isSpriteClicked(sprite6)) {
         settings->setPlayerId(5);
-    else if (isSpriteClicked(sprite7))
+        *submenu = 4;
+    } else if (isSpriteClicked(sprite7)) {
         settings->setPlayerId(6);
-    else if (isSpriteClicked(sprite8))
+        *submenu = 4;
+    } else if (isSpriteClicked(sprite8)) {
         settings->setPlayerId(7);
+        *submenu = 4;
+    } else if (isSpriteClicked(sprite3)) {
+        settings->setPlayerId(2);
+        *submenu = 4;
+    }
 }
 
 void NewGameMenu::init(Settings *newSettings, int *newSubmenu) {
@@ -75,25 +79,31 @@ void NewGameMenu::init(Settings *newSettings, int *newSubmenu) {
     //this->sprite_gif;
     //this->sprite_gif.setPosition(100, 100);
 
-    this->texture.loadFromFile("../assets/cars/play_button-removebg-preview.png");
+    this->texture.loadFromFile("../assets/cars/logo-removebg-preview.png");
     this->sprite.setTexture(texture);
-    this->sprite.setPosition(80, 50);
+    this->sprite.setPosition(100, 0);
 
     this->v1.loadFromFile("../assets/cars/vehicle1-removebg-preview-2.png");
     this->sprite1.setTexture(v1);
     this->sprite1.setPosition(100, 400);
+    std::cout << sprite1.getLocalBounds().width << " " << sprite1.getLocalBounds().height << std::endl;
 
     this->v2.loadFromFile("../assets/cars/vehicle2-removebg-preview-2.png");
     this->sprite2.setTexture(v2);
     this->sprite2.setPosition(350, 400);
+    std::cout << sprite2.getLocalBounds().width << " " << sprite2.getLocalBounds().height << std::endl;
 
-    this->v3.loadFromFile("../assets/cars/vehicle3-removebg-preview-2.png");
+    this->v3.loadFromFile("../assets/cars/zygzak_front-removebg-preview.png");
     this->sprite3.setTexture(v3);
-    this->sprite3.setPosition(600, 400);
+    this->sprite3.setPosition(630, 440);
+    this->sprite3.setScale(0.56f, 0.56f);
+    std::cout << sprite3.getLocalBounds().width << " " << sprite3.getLocalBounds().height << std::endl;
 
-    this->v4.loadFromFile("../assets/cars/vehicle4-removebg-preview-2.png");
+    this->v4.loadFromFile("../assets/cars/ice_cream_truck-removebg-preview-2.png");
     this->sprite4.setTexture(v4);
-    this->sprite4.setPosition(950, 400);
+    this->sprite4.setPosition(950, 430);
+    this->sprite4.setScale(0.9f, 0.9f);
+    std::cout << sprite4.getLocalBounds().width << " " << sprite4.getLocalBounds().height << std::endl;
 
     this->v5.loadFromFile("../assets/cars/vehicle5-removebg-preview-2.png");
     this->sprite5.setTexture(v5);
@@ -107,13 +117,10 @@ void NewGameMenu::init(Settings *newSettings, int *newSubmenu) {
     this->sprite7.setTexture(v7);
     this->sprite7.setPosition(700, 650);
 
-    this->v8.loadFromFile("../assets/cars/vehicle8-removebg-preview-2.png");
+    this->v8.loadFromFile("../assets/cars/vehicle8-removebg-preview.png");
     this->sprite8.setTexture(v8);
-    this->sprite8.setPosition(950, 650);
-
-    this->texture_return.loadFromFile("../assets/cars/return_button-removebg-preview-2.png");
-    this->sprite_return.setTexture(texture_return);
-    this->sprite_return.setPosition(1100, 50);
+    this->sprite8.setPosition(950, 600);
+    this->sprite8.setScale(0.5f, 0.5f);
 
     submenu = newSubmenu;
 }

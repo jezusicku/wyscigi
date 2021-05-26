@@ -1,6 +1,6 @@
 #include "splash.h"
 
-#define splash_time 3.0
+#define splash_time 2.0
 
 Splash::Splash() {
     settings = nullptr;

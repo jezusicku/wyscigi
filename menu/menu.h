@@ -12,6 +12,7 @@ class Menu {
     NewGameMenu newGameMenu;
     CreditsMenu creditsMenu;
     Splash splash;
+    StatsMenu statsMenu;
 
 public:
     explicit Menu(Settings*);
