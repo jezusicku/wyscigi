@@ -45,9 +45,9 @@ void Engine::update() {
     if (!pause) {
         map.update(player.getSpritePointer());
         player.update();
-        if (++counter == 200 and speed < 80) {
+        if (++counter == 200*settings->getPlayerData().getAcceleration() and speed < settings->getPlayerData().getMaxSpeed()) {
             counter = 0;
-            speed++;
+            speed++ ;
         }
         hud.update();
         if (map.collide(player.getSpritePointer())) {
