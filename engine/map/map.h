@@ -14,6 +14,7 @@ private:
     int *score;
     int *fuel;
     float counter;
+    float point;
     float lines[5];
 
     sf::Texture grassTexture;
