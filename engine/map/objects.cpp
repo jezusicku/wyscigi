@@ -31,7 +31,7 @@ void Objects::init(Settings *newSettings, int *speedPointer) {
     window = settings->getWindowPointer();
     speed = speedPointer;
 
-    for (int i = 1; i < 18; i++) {
+    for (int i = 1; i < 20; i++) {
         std::stringstream path;
         path << "../assets/map/objects/car_";
         if (i < 10) path << "0";
@@ -46,7 +46,7 @@ void Objects::init(Settings *newSettings, int *speedPointer) {
 }
 
 void Objects::generateObject(int line) {
-    int texture = rand() % 18;
+    int texture = rand() % 20;
     auto objectSpeed = float(float(*speed) / 2 - 5 + rand() % 10);
     objects[(begin + elements++) % 100].create(&textures[texture], line, objectSpeed);
 }

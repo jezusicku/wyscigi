@@ -11,7 +11,7 @@ private:
     int *speed;
     Object objects[100];
     int begin, elements;
-    sf::Texture textures[17];
+    sf::Texture textures[19];
     float lastObject;
 
 public:
