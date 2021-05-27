@@ -23,6 +23,7 @@ int main() {
 
     *scene = 0; // 1 - load game, 0 - load menu
     srand(time(NULL));
+    sf::err().rdbuf(NULL);
 
     while (window.isOpen() && *scene >= 0) {
 

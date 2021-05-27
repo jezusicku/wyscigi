@@ -63,7 +63,7 @@ void StatsMenu::display() {
     ss << "ROTATION:\t" << settings->getPlayerData().getRotationFactor();
     stats_text4.setString(ss.str());
 
-    v1.loadFromFile(settings->getPlayerData().getPreviewTexture());
+    if (!v1.loadFromFile(settings->getPlayerData().getPreviewTexture())) exit(1);
     sprite1 = sf::Sprite();
     sprite1.setTexture(v1);
 
@@ -125,23 +125,23 @@ void StatsMenu::init(Settings *newSettings, int *newSubmenu) {
     this->sprite_background.setPosition(0, 0);
     this->sprite_background.setScale(1.5f, 1.5f);*/
 
-    this->texture_background.loadFromFile("../assets/cars/stats_b.png");
-    this->sprite_background.setTexture(texture_background);
-    this->sprite_background.setPosition(0, 0);
-    this->sprite_background.setScale(1.3f, 1.39f);
+    if (!texture_background.loadFromFile("../assets/cars/stats_b.png")) exit(1);
+    sprite_background.setTexture(texture_background);
+    sprite_background.setPosition(0, 0);
+    sprite_background.setScale(1.3f, 1.39f);
 
     //this->sprite_gif;
     //this->sprite_gif.setPosition(100, 100);
 
-    this->texture.loadFromFile("../assets/cars/play_button-removebg-preview.png");
-    this->sprite.setTexture(texture);
-    this->sprite.setPosition(80, 50);
-    this->sprite.setScale(1.3f, 1.3f);
+    if (!texture.loadFromFile("../assets/cars/play_button-removebg-preview.png")) exit(1);
+    sprite.setTexture(texture);
+    sprite.setPosition(80, 50);
+    sprite.setScale(1.3f, 1.3f);
 
-    this->texture_return.loadFromFile("../assets/cars/return_button-removebg-preview-2.png");
-    this->sprite_return.setTexture(texture_return);
-    this->sprite_return.setPosition(1100, 50);
-    this->sprite_return.setScale(1.3f, 1.3f);
+    if (!texture_return.loadFromFile("../assets/cars/return_button-removebg-preview-2.png")) exit(1);
+    sprite_return.setTexture(texture_return);
+    sprite_return.setPosition(1100, 50);
+    sprite_return.setScale(1.3f, 1.3f);
 
     /*this->v1.loadFromFile("../assets/cars/vehicle1-removebg-preview-2.png");
     this->sprite1.setTexture(v1);

@@ -6,8 +6,7 @@ MainMenu::MainMenu() {
     scene = nullptr;
     submenu = nullptr;
 
-    if (!font.loadFromFile("../assets/fonts/Girassol-Regular.ttf"))
-        exit(1);
+    if (!font.loadFromFile("../assets/fonts/Girassol-Regular.ttf")) exit(1);
 
     newGameText.setFont(font);
     newGameText.setString("New Game");

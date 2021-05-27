@@ -71,56 +71,52 @@ void NewGameMenu::init(Settings *newSettings, int *newSubmenu) {
     window = settings->getWindowPointer();
     scene = settings->getScenePointer();
 
-    this->gif.loadFromFile("../assets/cars/background5.png");
-    this->sprite_gif.setTexture(gif);
-    this->sprite_gif.setPosition(0, 0);
-    this->sprite_gif.setScale(1.5f, 1.5f);
+    if (!gif.loadFromFile("../assets/cars/background5.png")) exit(1);
+    sprite_gif.setTexture(gif);
+    sprite_gif.setPosition(0, 0);
+    sprite_gif.setScale(1.5f, 1.5f);
 
     //this->sprite_gif;
     //this->sprite_gif.setPosition(100, 100);
 
-    this->texture.loadFromFile("../assets/cars/logo-removebg-preview.png");
-    this->sprite.setTexture(texture);
-    this->sprite.setPosition(100, 0);
+    if (!texture.loadFromFile("../assets/cars/logo-removebg-preview.png")) exit(1);
+    sprite.setTexture(texture);
+    sprite.setPosition(100, 0);
 
-    this->v1.loadFromFile("../assets/cars/vehicle1-removebg-preview-2.png");
-    this->sprite1.setTexture(v1);
-    this->sprite1.setPosition(100, 400);
-    std::cout << sprite1.getLocalBounds().width << " " << sprite1.getLocalBounds().height << std::endl;
+    if (!v1.loadFromFile("../assets/cars/vehicle1-removebg-preview-2.png")) exit(1);
+    sprite1.setTexture(v1);
+    sprite1.setPosition(100, 400);
 
-    this->v2.loadFromFile("../assets/cars/vehicle2-removebg-preview-2.png");
-    this->sprite2.setTexture(v2);
-    this->sprite2.setPosition(350, 400);
-    std::cout << sprite2.getLocalBounds().width << " " << sprite2.getLocalBounds().height << std::endl;
+    if (!v2.loadFromFile("../assets/cars/vehicle2-removebg-preview-2.png")) exit(1);
+    sprite2.setTexture(v2);
+    sprite2.setPosition(350, 400);
 
-    this->v3.loadFromFile("../assets/cars/zygzak_front-removebg-preview.png");
-    this->sprite3.setTexture(v3);
-    this->sprite3.setPosition(630, 440);
-    this->sprite3.setScale(0.56f, 0.56f);
-    std::cout << sprite3.getLocalBounds().width << " " << sprite3.getLocalBounds().height << std::endl;
+    if (!v3.loadFromFile("../assets/cars/zygzak_front-removebg-preview.png")) exit(1);
+    sprite3.setTexture(v3);
+    sprite3.setPosition(630, 440);
+    sprite3.setScale(0.56f, 0.56f);
 
-    this->v4.loadFromFile("../assets/cars/ice_cream_truck-removebg-preview-2.png");
-    this->sprite4.setTexture(v4);
-    this->sprite4.setPosition(950, 430);
-    this->sprite4.setScale(0.9f, 0.9f);
-    std::cout << sprite4.getLocalBounds().width << " " << sprite4.getLocalBounds().height << std::endl;
+    if (!v4.loadFromFile("../assets/cars/ice_cream_truck-removebg-preview-2.png")) exit(1);
+    sprite4.setTexture(v4);
+    sprite4.setPosition(950, 430);
+    sprite4.setScale(0.9f, 0.9f);
 
-    this->v5.loadFromFile("../assets/cars/vehicle5-removebg-preview-2.png");
-    this->sprite5.setTexture(v5);
-    this->sprite5.setPosition(100, 650);
+    if (!v5.loadFromFile("../assets/cars/vehicle5-removebg-preview-2.png")) exit(1);
+    sprite5.setTexture(v5);
+    sprite5.setPosition(100, 650);
 
-    this->v6.loadFromFile("../assets/cars/vahicle6-removebg-preview-2.png");
-    this->sprite6.setTexture(v6);
-    this->sprite6.setPosition(400, 650);
+    if (!v6.loadFromFile("../assets/cars/vahicle6-removebg-preview-2.png")) exit(1);
+    sprite6.setTexture(v6);
+    sprite6.setPosition(400, 650);
 
-    this->v7.loadFromFile("../assets/cars/vehicle7-removebg-preview-2.png");
-    this->sprite7.setTexture(v7);
-    this->sprite7.setPosition(700, 650);
+    if (!v7.loadFromFile("../assets/cars/vehicle7-removebg-preview-2.png")) exit(1);
+    sprite7.setTexture(v7);
+    sprite7.setPosition(700, 650);
 
-    this->v8.loadFromFile("../assets/cars/vehicle8-removebg-preview.png");
-    this->sprite8.setTexture(v8);
-    this->sprite8.setPosition(950, 600);
-    this->sprite8.setScale(0.5f, 0.5f);
+    if (!v8.loadFromFile("../assets/cars/vehicle8-removebg-preview.png")) exit(1);
+    sprite8.setTexture(v8);
+    sprite8.setPosition(950, 600);
+    sprite8.setScale(0.5f, 0.5f);
 
     submenu = newSubmenu;
 }

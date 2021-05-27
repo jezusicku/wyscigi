@@ -59,5 +59,6 @@ bool Fuel::isCollectable(sf::Sprite *playerSprite) {
 
 void Fuel::collect() {
     position = 1500;
+    sprite.setPosition(363.f, position);
     *fuel = settings->getPlayerData().getMaxFuel();
 }

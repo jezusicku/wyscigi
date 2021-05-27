@@ -19,7 +19,7 @@ void Objects::update(float change) {
         objects[(begin + i) % 100].update(change);
     for (int i = 0; i < elements; i++) {
         if (objects[(begin) % 100].isVisible()) {
-            begin++;
+            begin = (begin + 1) % 100;
             elements--;
         }
     }
