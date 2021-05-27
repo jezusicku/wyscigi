@@ -16,6 +16,7 @@
 #include "menu/credits_menu.cpp"
 #include "menu/splash.cpp"
 #include "menu/stats_menu.cpp"
+#include "menu/leaderboard_menu.cpp"
 #include "menu/menu.cpp"
 
 #include "engine/data/player.cpp"

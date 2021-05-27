@@ -12,6 +12,7 @@ private:
     int playerId;
     bool init;
     PlayersData playersData;
+    Scores scores;
 
 public:
     Settings();
@@ -24,6 +25,7 @@ public:
     PlayerData getPlayerData();
     void setInit(int);
     int getInit();
+    Scores *getScoresPointer();
 };
 
 #endif //SETTINGS_H

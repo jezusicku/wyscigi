@@ -3,6 +3,7 @@
 EndGame::EndGame() {
     this->settings = nullptr;
     this->window = nullptr;
+    this->scores = nullptr;
     this->score = nullptr;
     this->duration = 0;
     this->step = -1;
@@ -44,7 +45,7 @@ void EndGame::display() {
 void EndGame::update() {
     duration += 20;
     if (step == -1) {
-        place = scores.setScore(settings->getPlayerId(), *score);
+        place = scores->setScore(settings->getPlayerId(), *score);
         step = 0;
     } else if (step == 0) {
         background.setSize(sf::Vector2f(1280.f, float(duration)));
@@ -77,6 +78,7 @@ void EndGame::update() {
 void EndGame::init(Settings *newSettings, int *scorePointer) {
     settings = newSettings;
     window = settings->getWindowPointer();
+    scores = settings->getScoresPointer();
     score = scorePointer;
     duration = 0;
     step = -1;

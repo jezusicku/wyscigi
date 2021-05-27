@@ -43,3 +43,7 @@ void Settings::setInit(int newInit) {
 int Settings::getInit() {
     return init;
 }
+
+Scores *Settings::getScoresPointer() {
+    return &scores;
+}

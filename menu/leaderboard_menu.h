@@ -1,22 +1,17 @@
-#ifndef NEW_GAME_MENU_H
-#define NEW_GAME_MENU_H
+#ifndef LEADERBOARD_MENU_H
+#define LEADERBOARD_MENU_H
 
-#include "../engine/settings.h"
-
-//@formatter:off
-class NewGameMenu {
+class LeaderboardMenu {
 private:
     Settings* settings;
     sf::RenderWindow* window;
+    Scores *scores;
     int* scene;
     int* submenu;
 
     sf::Font font;
-    sf::Text newGameText;
-    sf::Texture gif;		 //gif
-    sf::Texture texture_gif; //gif
+    sf::Texture gif;
     sf::Texture texture;
-    sf::Texture texture_return;
     sf::Texture v1;
     sf::Texture v2;
     sf::Texture v3;
@@ -25,7 +20,7 @@ private:
     sf::Texture v6;
     sf::Texture v7;
     sf::Texture v8;
-    sf::Sprite sprite_gif; //gif
+    sf::Sprite sprite_gif;
     sf::Sprite sprite1;
     sf::Sprite sprite2;
     sf::Sprite sprite3;
@@ -34,15 +29,13 @@ private:
     sf::Sprite sprite6;
     sf::Sprite sprite7;
     sf::Sprite sprite8;
-    sf::Sprite _background;
-    sf::Sprite sprite;
-    sf::Sprite sprite_return;
 
     sf::Texture leaderboardTexture;
     sf::Sprite leaderBoardSprite;
+    sf::Text scoreTexts[24];
 
 public:
-    NewGameMenu();
+    LeaderboardMenu();
     void update();
     void display();
     void init(Settings*, int*);
@@ -52,4 +45,5 @@ private:
     bool isSpriteClicked(sf::Sprite&);
 };
 
-#endif //NEW_GAME_MENU_H
+
+#endif //LEADERBOARD_MENU_H

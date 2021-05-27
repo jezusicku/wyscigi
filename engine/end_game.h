@@ -6,6 +6,7 @@ class EndGame {
 private:
     Settings *settings;
     sf::RenderWindow *window;
+    Scores *scores;
     int *score;
     int duration;
     int step;
@@ -16,8 +17,6 @@ private:
     sf::Text scorePlainText;
     sf::Text scoreText;
     sf::Text returnText;
-
-    Scores scores;
 
 public:
     EndGame();

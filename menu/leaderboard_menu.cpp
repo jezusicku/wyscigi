@@ -1,26 +1,13 @@
-#include "new_game_menu.h"
+#include "leaderboard_menu.h"
 
-NewGameMenu::NewGameMenu() {
+LeaderboardMenu::LeaderboardMenu() {
     settings = nullptr;
     window = nullptr;
+    scores = nullptr;
     scene = nullptr;
     submenu = nullptr;
 
     if (!font.loadFromFile("../assets/fonts/Girassol-Regular.ttf")) exit(1);
-
-    newGameText.setFont(font);
-    newGameText.setString("CHOOSE YOUR PLAYER");
-    newGameText.setCharacterSize(32);
-    newGameText.setFillColor(sf::Color::Red);
-    newGameText.setStyle(sf::Text::Bold);
-    newGameText.setPosition(470, 300);
-
-    /*returnText.setFont(font);
-    returnText.setString("Return");
-    returnText.setCharacterSize(32);
-    returnText.setFillColor(sf::Color::Green);
-    returnText.setStyle(sf::Text::Bold);
-    returnText.setPosition(50, 150);*/
 
     if (!leaderboardTexture.loadFromFile("../assets/cars/leaderboard.png")) exit(1);
     leaderboardTexture.setRepeated(false);
@@ -29,12 +16,19 @@ NewGameMenu::NewGameMenu() {
     leaderBoardSprite.setTexture(leaderboardTexture);
     leaderBoardSprite.setScale(.1f, .1f);
     leaderBoardSprite.setPosition(1229.f, 0.f);
+
+    for (int i = 0; i < 24; i++) {
+        scoreTexts[i].setFont(font);
+        scoreTexts[i].setFillColor(sf::Color::Red);
+        scoreTexts[i].setStyle(sf::Text::Bold);
+        scoreTexts[i].setCharacterSize(32);
+        scoreTexts[i].setPosition(float(100 + 300 * ((i % 12) / 3)), float(220 + 440 * (i / 12) + 65 * (i % 3)));
+        scoreTexts[i].setString("XD " + std::to_string(i));
+    }
 }
 
-void NewGameMenu::display() {
+void LeaderboardMenu::display() {
     window->draw(sprite_gif);
-    //window->draw(sprite_return);
-    window->draw(sprite);
     window->draw(sprite1);
     window->draw(sprite2);
     window->draw(sprite3);
@@ -43,96 +37,74 @@ void NewGameMenu::display() {
     window->draw(sprite6);
     window->draw(sprite7);
     window->draw(sprite8);
-    window->draw(newGameText);
     window->draw(leaderBoardSprite);
+
+    for (int i = 0; i < 24; ++i) {
+        std::string place = std::to_string(i % 3 + 1) + ".\t";
+        scoreTexts[i].setString(place + std::to_string(scores->getScore(i / 3, i % 3)));
+    }
+
+
+    for (const auto &scoreText : scoreTexts)
+        window->draw(scoreText);
 }
 
-void NewGameMenu::update() {
-    if (isSpriteClicked(sprite1)) {
-        settings->setPlayerId(0);
-        *submenu = 4;
-    } else if (isSpriteClicked(sprite2)) {
-        settings->setPlayerId(1);
-        *submenu = 4;
-    } else if (isSpriteClicked(sprite4)) {
-        settings->setPlayerId(3);
-        *submenu = 4;
-    } else if (isSpriteClicked(sprite5)) {
-        settings->setPlayerId(4);
-        *submenu = 4;
-    } else if (isSpriteClicked(sprite6)) {
-        settings->setPlayerId(5);
-        *submenu = 4;
-    } else if (isSpriteClicked(sprite7)) {
-        settings->setPlayerId(6);
-        *submenu = 4;
-    } else if (isSpriteClicked(sprite8)) {
-        settings->setPlayerId(7);
-        *submenu = 4;
-    } else if (isSpriteClicked(sprite3)) {
-        settings->setPlayerId(2);
-        *submenu = 4;
-    } else if (isSpriteClicked(leaderBoardSprite)) {
-        *submenu = 5;
+void LeaderboardMenu::update() {
+    if (isSpriteClicked(leaderBoardSprite)) {
+        *submenu = 1;
     }
 }
 
-void NewGameMenu::init(Settings *newSettings, int *newSubmenu) {
+void LeaderboardMenu::init(Settings *newSettings, int *newSubmenu) {
     settings = newSettings;
     window = settings->getWindowPointer();
     scene = settings->getScenePointer();
+    scores = settings->getScoresPointer();
 
     if (!gif.loadFromFile("../assets/cars/background5.png")) exit(1);
     sprite_gif.setTexture(gif);
     sprite_gif.setPosition(0, 0);
     sprite_gif.setScale(1.5f, 1.5f);
 
-    //this->sprite_gif;
-    //this->sprite_gif.setPosition(100, 100);
-
-    if (!texture.loadFromFile("../assets/cars/logo-removebg-preview.png")) exit(1);
-    sprite.setTexture(texture);
-    sprite.setPosition(100, 0);
-
     if (!v1.loadFromFile("../assets/cars/vehicle1-removebg-preview-2.png")) exit(1);
     sprite1.setTexture(v1);
-    sprite1.setPosition(100, 400);
+    sprite1.setPosition(100, 20);
 
     if (!v2.loadFromFile("../assets/cars/vehicle2-removebg-preview-2.png")) exit(1);
     sprite2.setTexture(v2);
-    sprite2.setPosition(350, 400);
+    sprite2.setPosition(350, 20);
 
     if (!v3.loadFromFile("../assets/cars/zygzak_front-removebg-preview.png")) exit(1);
     sprite3.setTexture(v3);
-    sprite3.setPosition(630, 440);
+    sprite3.setPosition(630, 60);
     sprite3.setScale(0.56f, 0.56f);
 
     if (!v4.loadFromFile("../assets/cars/ice_cream_truck-removebg-preview-2.png")) exit(1);
     sprite4.setTexture(v4);
-    sprite4.setPosition(950, 430);
+    sprite4.setPosition(950, 70);
     sprite4.setScale(0.9f, 0.9f);
 
     if (!v5.loadFromFile("../assets/cars/vehicle5-removebg-preview-2.png")) exit(1);
     sprite5.setTexture(v5);
-    sprite5.setPosition(100, 650);
+    sprite5.setPosition(100, 470);
 
     if (!v6.loadFromFile("../assets/cars/vahicle6-removebg-preview-2.png")) exit(1);
     sprite6.setTexture(v6);
-    sprite6.setPosition(400, 650);
+    sprite6.setPosition(400, 470);
 
     if (!v7.loadFromFile("../assets/cars/vehicle7-removebg-preview-2.png")) exit(1);
     sprite7.setTexture(v7);
-    sprite7.setPosition(700, 650);
+    sprite7.setPosition(700, 470);
 
     if (!v8.loadFromFile("../assets/cars/vehicle8-removebg-preview.png")) exit(1);
     sprite8.setTexture(v8);
-    sprite8.setPosition(950, 600);
+    sprite8.setPosition(950, 420);
     sprite8.setScale(0.5f, 0.5f);
 
     submenu = newSubmenu;
 }
 
-bool NewGameMenu::isClicked(sf::Text &text) {
+bool LeaderboardMenu::isClicked(sf::Text &text) {
     sf::Vector2i mousePosition = sf::Mouse::getPosition(*window);
     sf::Vector2f textPosition = text.getPosition();
     float textWidth = text.getLocalBounds().width;
@@ -141,7 +113,7 @@ bool NewGameMenu::isClicked(sf::Text &text) {
            mousePosition.y >= textPosition.y && mousePosition.y <= textPosition.y + textHeight;
 }
 
-bool NewGameMenu::isSpriteClicked(sf::Sprite &sprite) {
+bool LeaderboardMenu::isSpriteClicked(sf::Sprite &sprite) {
     sf::Vector2i mousePosition = sf::Mouse::getPosition(*window);
     sf::Vector2f textPosition = sprite.getPosition();
     float imageWidth = sprite.getLocalBounds().width;

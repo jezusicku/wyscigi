@@ -13,6 +13,7 @@ class Menu {
     CreditsMenu creditsMenu;
     Splash splash;
     StatsMenu statsMenu;
+    LeaderboardMenu leaderboardMenu;
 
 public:
     explicit Menu(Settings*);
