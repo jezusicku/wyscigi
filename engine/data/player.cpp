@@ -61,12 +61,12 @@ std::string PlayerData::getPreviewTexture() {
 }
 
 PlayersData::PlayersData() {
-    players[0] = PlayerData(40, 120, 60, 60, 800, 40, .3, 0.8, 1, "../assets/cars/jakis.png", "../assets/cars/vehicle1-removebg-preview-2.png");
-    players[1] = PlayerData(30, 80, 80, 120, 750, 55, .4, 0.5, 1.5, "../assets/cars/zuk.png", "../assets/cars/vehicle2-removebg-preview-2.png");
-    players[2] = PlayerData(40, 200, 60, 60, 800, 40, .3, 1.1, 0.8, "../assets/cars/carrera.png", "../assets/cars/zygzak_front-removebg-preview.png");
-    players[3] = PlayerData(60, 300, 30, 60, 800, 40, .3, 2, 0.5, "../assets/cars/bolid.png", "../assets/cars/ice_cream_truck-removebg-preview-2.png");
-    players[4] = PlayerData(40, 220, 120, 120, 800, 40, .3, 1.5, 0.7, "../assets/cars/ferrari.png", "../assets/cars/vehicle5-removebg-preview-2.png");
+    players[0] = PlayerData(40, 180, 60, 60, 800, 40, .3, 0.5, 0.7, "../assets/cars/lambo.png", "../assets/cars/vehicle1-removebg-preview-2.png");
+    players[1] = PlayerData(40, 160, 60, 60, 800, 40, .3, 0.8, 1, "../assets/cars/carrera.png", "../assets/cars/vehicle2-removebg-preview-2.png");
+    players[2] = PlayerData(40, 200, 60, 60, 800, 40, .35, 1.2, 0.8, "../assets/cars/zygzak.png", "../assets/cars/zygzak_front-removebg-preview.png");
+    players[3] = PlayerData(30, 80, 100, 100, 760, 52, .40, 0.4, 1.2, "../assets/cars/ice_cream_truck.png", "../assets/cars/ice_cream_truck-removebg-preview-2.png");
+    players[4] = PlayerData(35, 90, 120, 120, 640, 55, .8, 0.3, 1.1, "../assets/cars/truck.png", "../assets/cars/vehicle5-removebg-preview-2.png");
     players[5] = PlayerData(100, 500, 50, 50, 800, 40, .3, 2, 0.5, "../assets/cars/nevada_ze_stara.png", "../assets/cars/vahicle6-removebg-preview-2.png");
-    players[6] = PlayerData(35, 90, 80, 120, 750, 55, .4, 0.5, 1.2, "../assets/cars/wywrotka.png", "../assets/cars/vehicle7-removebg-preview-2.png");
-    players[7] = PlayerData(60, 280, 50, 70, 800, 40, .3, 0.5, 0.85, "../assets/cars/lambo.png", "../assets/cars/vehicle8-removebg-preview.png");
+    players[6] = PlayerData(20, 50, 10000, 10000, 820, 40, .2, 1.5, 0.8, "../assets/cars/cyclist.png", "../assets/cars/vehicle7-removebg-preview-2.png");
+    players[7] = PlayerData(15, 30, 10000, 10000, 800, 40, .3, 0.1, .8, "../assets/cars/boat.png", "../assets/cars/vehicle8-removebg-preview.png");
 }
