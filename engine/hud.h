@@ -1,7 +1,10 @@
 #ifndef HUD_H
 #define HUD_H
-
 //@formatter:off
+
+/**
+ * Object of this class manages heads-up display.
+ */
 class Hud {
 private:
     Settings *settings;

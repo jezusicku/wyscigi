@@ -35,6 +35,9 @@ EndGame::EndGame() {
 
 }
 
+/**
+ * Function displays end game screen on the screen.
+ */
 void EndGame::display() {
     window->draw(background);
     window->draw(scorePlainText);
@@ -42,10 +45,14 @@ void EndGame::display() {
     window->draw(returnText);
 }
 
+/**
+ * Function updates end game screen and only in first call (after call init function) tries to save score
+ * achieved by user. If user has clicked return button then menu will be displayed.
+ */
 void EndGame::update() {
     duration += 20;
     if (step == -1) {
-        place = scores->setScore(settings->getPlayerId(), *score);
+        place = scores->setScore(settings->getVehicleId(), *score);
         step = 0;
     } else if (step == 0) {
         background.setSize(sf::Vector2f(1280.f, float(duration)));
@@ -75,6 +82,12 @@ void EndGame::update() {
     }
 }
 
+/**
+ * Function initializes object.
+ * @param newSettings Pointer to object of class Settings
+ * @param scorePointer Pointer to player score
+ * @see Settings
+ */
 void EndGame::init(Settings *newSettings, int *scorePointer) {
     settings = newSettings;
     window = settings->getWindowPointer();
@@ -88,6 +101,10 @@ void EndGame::init(Settings *newSettings, int *scorePointer) {
     returnText.setPosition(640.f, 1000.f);
 }
 
+/**
+ * @param text Pointer to object of class sf::Text
+ * @return True if given text has been clicked
+ */
 bool EndGame::isClicked(sf::Text &text) {
     sf::Vector2i mousePosition = sf::Mouse::getPosition(*window);
     sf::Vector2f textPosition = text.getPosition();

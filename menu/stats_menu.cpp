@@ -67,28 +67,28 @@ void StatsMenu::display() {
     sprite1 = sf::Sprite();
     sprite1.setTexture(v1);
 
-    if (settings->getPlayerId() == 0) {
+    if (settings->getVehicleId() == 0) {
         this->sprite1.setPosition(900, 365);
         this->sprite1.setScale(1.5f, 1.5f);
-    } else if (settings->getPlayerId() == 1) {
+    } else if (settings->getVehicleId() == 1) {
         this->sprite1.setPosition(900, 365);
         this->sprite1.setScale(1.5f, 1.5f);
-    } else if (settings->getPlayerId() == 2) {
+    } else if (settings->getVehicleId() == 2) {
         this->sprite1.setPosition(800, 410);
         this->sprite1.setScale(0.85f, 0.85f);
-    } else if (settings->getPlayerId() == 3) {
+    } else if (settings->getVehicleId() == 3) {
         this->sprite1.setPosition(850, 410);
         this->sprite1.setScale(1.25f, 1.25);
-    } else if (settings->getPlayerId() == 4) {
+    } else if (settings->getVehicleId() == 4) {
         this->sprite1.setPosition(900, 365);
         this->sprite1.setScale(1.5f, 1.5f);
-    } else if (settings->getPlayerId() == 5) {
+    } else if (settings->getVehicleId() == 5) {
         this->sprite1.setPosition(900, 365);
         this->sprite1.setScale(1.5f, 1.5f);
-    } else if (settings->getPlayerId() == 6) {
+    } else if (settings->getVehicleId() == 6) {
         this->sprite1.setPosition(900, 365);
         this->sprite1.setScale(1.5f, 1.5f);
-    } else if (settings->getPlayerId() == 7) {
+    } else if (settings->getVehicleId() == 7) {
         this->sprite1.setPosition(840, 315);
         this->sprite1.setScale(0.8f, 0.8f);
     }

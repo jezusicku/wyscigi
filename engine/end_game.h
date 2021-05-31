@@ -1,7 +1,10 @@
 #ifndef TRANSITION_H
 #define TRANSITION_H
-
 //@formatter:off
+
+/**
+ * Object of this class displays end game screen and saves score achieved by the user.
+ */
 class EndGame {
 private:
     Settings *settings;

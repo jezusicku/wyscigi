@@ -30,6 +30,9 @@ Hud::Hud() {
     currentFuelShape.setFillColor(sf::Color::Red);
 }
 
+/**
+ * Function displays player's vehicle current speed, player score and fuel level on the screen.
+ */
 void Hud::display() {
     window->draw(speedText);
     window->draw(scoreText);
@@ -37,6 +40,9 @@ void Hud::display() {
     window->draw(currentFuelShape);
 }
 
+/**
+ * Function updates info on the heads-up display.
+ */
 void Hud::update() {
     char speedChars[10];
     sprintf(speedChars, "%imph", *speed);
@@ -48,6 +54,14 @@ void Hud::update() {
     currentFuelShape.setSize(sf::Vector2f(currentFuelShapeX, 30.f));
 }
 
+/**
+ * Function initializes object.
+ * @param newSettings Pointer to object of class Settings
+ * @param speedPointer Pointer to player's vehicle speed
+ * @param scorePointer Pointer to player score
+ * @param fuelPointer Pointer to fuel level
+ * @see Settings
+ */
 void Hud::init(Settings *newSettings, int *speedPointer, int *scorePointer, int *fuelPointer) {
     settings = newSettings;
     window = this->settings->getWindowPointer();

@@ -1,11 +1,14 @@
 #ifndef ENGINE_H
 #define ENGINE_H
+//@formatter:off
 
 #include "settings.h"
 #include "player.h"
 #include "map/map.h"
 
-//@formatter:off
+/**
+ * Object of this class manages all game mechanics.
+ */
 class Engine {
 private:
     Settings *settings;
@@ -26,13 +29,12 @@ private:
     EndGame endGame;
 
 public:
-    Engine(Settings *settings);
+    explicit Engine(Settings *settings);
     void display();
     void update();
     void init();
 
     void swapPause();
-    void ScoreCounter();
 };
 
 #endif //ENGINE_H

@@ -1,11 +1,14 @@
 #ifndef MAP_H
 #define MAP_H
+//@formatter:off
 
 #include "objects.h"
 #include "trees.h"
 #include "fuel.h"
 
-//@formatter:off
+/**
+ * Object of this class manages road, roadside, trees, vehicles and other objects.
+ */
 class Map {
 private:
     Settings* settings;
@@ -16,7 +19,7 @@ private:
     float counter;
     float scoreCounter;
     float fuelCounter;
-    float lines[5];
+    float lanes[5];
 
     sf::Texture grassTexture;
     sf::RectangleShape grassShape;

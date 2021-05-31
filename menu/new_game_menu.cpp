@@ -49,28 +49,28 @@ void NewGameMenu::display() {
 
 void NewGameMenu::update() {
     if (isSpriteClicked(sprite1)) {
-        settings->setPlayerId(0);
+        settings->setVehicleId(0);
         *submenu = 4;
     } else if (isSpriteClicked(sprite2)) {
-        settings->setPlayerId(1);
+        settings->setVehicleId(1);
         *submenu = 4;
     } else if (isSpriteClicked(sprite4)) {
-        settings->setPlayerId(3);
+        settings->setVehicleId(3);
         *submenu = 4;
     } else if (isSpriteClicked(sprite5)) {
-        settings->setPlayerId(4);
+        settings->setVehicleId(4);
         *submenu = 4;
     } else if (isSpriteClicked(sprite6)) {
-        settings->setPlayerId(5);
+        settings->setVehicleId(5);
         *submenu = 4;
     } else if (isSpriteClicked(sprite7)) {
-        settings->setPlayerId(6);
+        settings->setVehicleId(6);
         *submenu = 4;
     } else if (isSpriteClicked(sprite8)) {
-        settings->setPlayerId(7);
+        settings->setVehicleId(7);
         *submenu = 4;
     } else if (isSpriteClicked(sprite3)) {
-        settings->setPlayerId(2);
+        settings->setVehicleId(2);
         *submenu = 4;
     } else if (isSpriteClicked(leaderBoardSprite)) {
         *submenu = 5;

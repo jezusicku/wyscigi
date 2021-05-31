@@ -17,6 +17,11 @@ Engine::Engine(Settings *settings) {
     this->endGame.init(settings, &score);
 }
 
+/**
+ * Function display player's vehicle, map and hud.
+ * If pause is turned on then displays pause menu.
+ * If game ended then displays end game screen.
+ */
 void Engine::display() {
     map.display();
     player.display();
@@ -25,10 +30,12 @@ void Engine::display() {
     else if (pause) pauseMenu.display();
 }
 
-void Engine::ScoreCounter() {
-    score = speed;
-}
-
+/**
+ * If game is not initialized then function initializes the game using the init function.
+ * If game has been ended then the end game screen is updated.
+ * If pause is turned on then the pause menu is updated.
+ * Otherwise player's vehicle and map are updated.
+ */
 void Engine::update() {
     if (settings->getInit() == true) {
         init();
@@ -55,6 +62,10 @@ void Engine::update() {
     } else pauseMenu.update();
 }
 
+/**
+ * Function initializes player's vehicle speed, player score and fuel level. All current objects are removed from the
+ * map and pause menu and end game screen are disabled.
+ */
 void Engine::init() {
     speed = settings->getPlayerData().getInitSpeed();
     counter = 0;
@@ -68,6 +79,9 @@ void Engine::init() {
     settings->setInit(false);
 }
 
+/**
+ * Function swaps visibility of pause menu.
+ */
 void Engine::swapPause() {
     pause = !pause;
 }

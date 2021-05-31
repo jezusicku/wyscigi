@@ -19,24 +19,39 @@ PauseMenu::PauseMenu() {
     continueText.setPosition(640.f, 480.f);
 }
 
+/**
+ * Function displays pause menu on the screen.
+ */
 void PauseMenu::display() {
     window->draw(background);
     window->draw(continueText);
 }
 
+/**
+ * Function checks if user has clicked continue button. If button is clicked then pause is turned off.
+ */
 void PauseMenu::update() {
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && *settings->getFocusPointer()) {
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && *settings->getFocusPointer())
         if (isClicked(continueText))
             *pause = false;
-    }
 }
 
+/**
+ * Function initializes object.
+ * @param newSettings Pointer to object of class Settings
+ * @param pausePointer Pointer to pause boolean
+ * @see Settings
+ */
 void PauseMenu::init(Settings *newSettings, bool *pausePointer) {
     settings = newSettings;
     window = newSettings->getWindowPointer();
     pause = pausePointer;
 }
 
+/**
+ * @param text Pointer to object of class sf::Text
+ * @return True if given text has been clicked
+ */
 bool PauseMenu::isClicked(sf::Text &text) {
     sf::Vector2i mousePosition = sf::Mouse::getPosition(*window);
     sf::Vector2f textPosition = text.getPosition();

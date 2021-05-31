@@ -1,6 +1,10 @@
 #ifndef PAUSE_MENU_H
 #define PAUSE_MENU_H
+//@formatter:off
 
+/**
+ * Object of this class displays pause menu.
+ */
 class PauseMenu {
 private:
     Settings *settings;
