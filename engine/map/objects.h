@@ -1,9 +1,12 @@
 #ifndef OBJECTS_H
 #define OBJECTS_H
+//@formatter:off
 
 #include "object.h"
 
-//@formatter:off
+/**
+ * Object of this class generates, displays and removes cars on the screen.
+ */
 class Objects {
 private:
     Settings *settings;

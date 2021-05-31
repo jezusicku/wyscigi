@@ -1,9 +1,12 @@
 #ifndef TREES_H
 #define TREES_H
+//@formatter:off
 
 #include "tree.h"
 
-//@formatter:off
+/**
+ * Object of this class generates, displays and removes trees on the screen.
+ */
 class Trees {
 private:
     Settings* settings;

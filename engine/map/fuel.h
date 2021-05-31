@@ -1,7 +1,10 @@
 #ifndef FUEL_H
 #define FUEL_H
-
 //@formatter:off
+
+/**
+ * Object of this class generates, displays and removes fuel canisters on the screen.
+ */
 class Fuel {
 private:
     Settings *settings;

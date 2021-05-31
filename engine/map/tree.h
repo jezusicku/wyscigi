@@ -1,7 +1,10 @@
 #ifndef TREE_H
 #define TREE_H
-
 //@formatter:off
+
+/**
+ * Object of this class represents single tree on the screen.
+ */
 class Tree {
 private:
     Settings* settings;

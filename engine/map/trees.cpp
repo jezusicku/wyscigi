@@ -9,11 +9,19 @@ Trees::Trees() {
     this->lastRightTree = 0.f;
 }
 
+/**
+ * Function displays all trees on the screen.
+ */
 void Trees::display() {
     for (int i = 0; i < elements; i++)
         trees[(begin + i) % 100].display();
 }
 
+/**
+ * Function changes position of all visible trees on the screen. Trees will be moved down by specified number of pixels.
+ * Function also try to generate new trees with method generateTrees().
+ * @param change Number of pixels
+ */
 void Trees::update(float change) {
     for (int i = 0; i < elements; i++)
         trees[(begin + i) % 100].update(change);
@@ -28,6 +36,11 @@ void Trees::update(float change) {
     generateTrees();
 }
 
+/**
+ * Function initializes object, loads all necessary textures to memory and initializes all trees.
+ * @param newSettings Pointer to object of class Settings
+ * @see Settings
+ */
 void Trees::init(Settings *newSettings) {
     this->settings = newSettings;
     this->window = this->settings->getWindowPointer();
@@ -44,6 +57,11 @@ void Trees::init(Settings *newSettings) {
         tree.init(newSettings);
 }
 
+/**
+ * Function generates new trees on the screen only if previously generated tree has moved away by specified number of
+ * pixels. When new tree is generated then new distance is drawn after which another tree will generate. Trees on the
+ * left and right side of the road are generated independently.
+ */
 void Trees::generateTrees() {
     if (lastLeftTree > 0) {
         int texture = rand() % 47;
@@ -59,6 +77,9 @@ void Trees::generateTrees() {
     }
 }
 
+/**
+ * Function removes all trees from the screen.
+ */
 void Trees::clear() {
     begin = 0;
     elements = 0;

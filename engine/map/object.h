@@ -1,7 +1,10 @@
 #ifndef OBJECT_H
 #define OBJECT_H
-
 //@formatter:off
+
+/**
+ * Object of this class represents single car on the screen.
+ */
 class Object {
 private:
     Settings *settings;
