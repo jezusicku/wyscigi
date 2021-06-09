@@ -48,11 +48,19 @@ void Engine::update() {
         endGame.update();
         return;
     }
-
+/**
+ * Implementation of vehicle's acceleration and arrow key up boost. When we put key acceleration is 3 times faster.
+ */
     if (!pause) {
         map.update(player.getSpritePointer());
         player.update();
-        if (++counter == 200 * settings->getPlayerData().getAcceleration() and speed < settings->getPlayerData().getMaxSpeed()) {
+        float ac = settings->getPlayerData().getAcceleration();
+        int limit = 200 * ac;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+            counter++;
+            counter++;
+        }
+        if ((++counter == limit || counter == limit +1 || counter == limit +2) and speed < settings->getPlayerData().getMaxSpeed()) {
             counter = 0;
             speed++;
         }

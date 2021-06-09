@@ -22,12 +22,12 @@ void Player::display() {
  */
 void Player::rotationZero() {
     if (rotation != 0.0) {
-        if (rotation <= .3 && rotation >= -.3) {
+        if (rotation <= .5 && rotation >= -.5) {
             rotation = 0;
         } else if (rotation > 0) {
-            rotation -= .5 * settings->getPlayerData().getRotationFactor();
+            rotation -= .3 * settings->getPlayerData().getRotationFactor();
         } else if (rotation < 0) {
-            rotation += .5 * settings->getPlayerData().getRotationFactor();
+            rotation += .3 * settings->getPlayerData().getRotationFactor();
         }
     }
 }
@@ -43,11 +43,17 @@ void Player::update() {
         if (rotation > 0.0) {
             rotationZero();
         }
+        if (settings->getPlayerData().getRotationFactor() > 1) {
+            rotation -= .15 * settings->getPlayerData().getRotationFactor();
+        }
         rotation -= .15;
     }
     if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) && position < 280) {
         if (rotation < 0.0) {
             rotationZero();
+        }
+        if (settings->getPlayerData().getRotationFactor() > 1) {
+            rotation += .15 * settings->getPlayerData().getRotationFactor();
         }
         rotation += .15;
     }
@@ -57,9 +63,9 @@ void Player::update() {
  * and rotation value.
  */
     if (rotation > 0 && position < 280) {
-        position += (2 * rotation * (float(*speed) / 100)) * settings->getPlayerData().getRotationFactor();
+        position += (2 * rotation * (float(*speed) / 100)) ;
     } else if (rotation < 0 && position > -280) {
-        position += (2 * rotation * (float(*speed) / 100)) * settings->getPlayerData().getRotationFactor();
+        position += (2 * rotation * (float(*speed) / 100)) ;
     }
     if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
         rotationZero();
