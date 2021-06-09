@@ -15,13 +15,6 @@ NewGameMenu::NewGameMenu() {
     newGameText.setStyle(sf::Text::Bold);
     newGameText.setPosition(470, 300);
 
-    /*returnText.setFont(font);
-    returnText.setString("Return");
-    returnText.setCharacterSize(32);
-    returnText.setFillColor(sf::Color::Green);
-    returnText.setStyle(sf::Text::Bold);
-    returnText.setPosition(50, 150);*/
-
     if (!leaderboardTexture.loadFromFile("../assets/cars/leaderboard.png")) exit(1);
     leaderboardTexture.setRepeated(false);
     leaderboardTexture.setSmooth(true);
@@ -33,7 +26,6 @@ NewGameMenu::NewGameMenu() {
 
 void NewGameMenu::display() {
     window->draw(sprite_gif);
-    //window->draw(sprite_return);
     window->draw(sprite);
     window->draw(sprite1);
     window->draw(sprite2);
@@ -86,9 +78,6 @@ void NewGameMenu::init(Settings *newSettings, int *newSubmenu) {
     sprite_gif.setTexture(gif);
     sprite_gif.setPosition(0, 0);
     sprite_gif.setScale(1.5f, 1.5f);
-
-    //this->sprite_gif;
-    //this->sprite_gif.setPosition(100, 100);
 
     if (!texture.loadFromFile("../assets/cars/logo-removebg-preview.png")) exit(1);
     sprite.setTexture(texture);

@@ -11,9 +11,7 @@
 
 #include "engine/scores.cpp"
 
-#include "menu/main_menu.cpp"
 #include "menu/new_game_menu.cpp"
-#include "menu/credits_menu.cpp"
 #include "menu/splash.cpp"
 #include "menu/stats_menu.cpp"
 #include "menu/leaderboard_menu.cpp"

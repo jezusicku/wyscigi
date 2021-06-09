@@ -98,9 +98,6 @@ void StatsMenu::display() {
     window->draw(sprite_return);
     window->draw(sprite);
     window->draw(sprite1);
-    /*window->draw(sprite2);
-    window->draw(sprite3);
-    window->draw(sprite4);*/
     window->draw(stats_text);
     window->draw(stats_text1);
     window->draw(stats_text2);
@@ -120,18 +117,10 @@ void StatsMenu::init(Settings *newSettings, int *newSubmenu) {
     window = settings->getWindowPointer();
     scene = settings->getScenePointer();
 
-    /*this->texture_background.loadFromFile(PATH + "/assets/cars/stats_background.png");
-    this->sprite_background.setTexture(texture_background);
-    this->sprite_background.setPosition(0, 0);
-    this->sprite_background.setScale(1.5f, 1.5f);*/
-
     if (!texture_background.loadFromFile("../assets/cars/stats_b.png")) exit(1);
     sprite_background.setTexture(texture_background);
     sprite_background.setPosition(0, 0);
     sprite_background.setScale(1.3f, 1.39f);
-
-    //this->sprite_gif;
-    //this->sprite_gif.setPosition(100, 100);
 
     if (!texture.loadFromFile("../assets/cars/play_button-removebg-preview.png")) exit(1);
     sprite.setTexture(texture);
@@ -142,11 +131,6 @@ void StatsMenu::init(Settings *newSettings, int *newSubmenu) {
     sprite_return.setTexture(texture_return);
     sprite_return.setPosition(1100, 50);
     sprite_return.setScale(1.3f, 1.3f);
-
-    /*this->v1.loadFromFile("../assets/cars/vehicle1-removebg-preview-2.png");
-    this->sprite1.setTexture(v1);
-    this->sprite1.setPosition(900, 365);
-    this->sprite1.setScale(1.5f, 1.5f);*/
 
     submenu = newSubmenu;
 }

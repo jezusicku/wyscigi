@@ -8,9 +8,7 @@ class Menu {
     Settings *settings;
     int submenu;
 
-    MainMenu mainMenu;
     NewGameMenu newGameMenu;
-    CreditsMenu creditsMenu;
     Splash splash;
     StatsMenu statsMenu;
     LeaderboardMenu leaderboardMenu;

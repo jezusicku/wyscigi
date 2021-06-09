@@ -18,15 +18,9 @@ private:
     sf::Texture texture_return;
     sf::Texture texture_background;
     sf::Texture v1;
-    sf::Texture v2;
-    sf::Texture v3;
-    sf::Texture v4;
     sf::Sprite sprite_background;
     sf::Sprite sprite1;
-    sf::Sprite sprite2;
     sf::Sprite sprite3;
-    sf::Sprite sprite4;
-    sf::Sprite _background;
     sf::Sprite sprite;
     sf::Sprite sprite_return;
 

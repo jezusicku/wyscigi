@@ -13,10 +13,8 @@ private:
 
     sf::Font font;
     sf::Text newGameText;
-    sf::Texture gif;		 //gif
-    sf::Texture texture_gif; //gif
+    sf::Texture gif; //gif
     sf::Texture texture;
-    sf::Texture texture_return;
     sf::Texture v1;
     sf::Texture v2;
     sf::Texture v3;
@@ -34,9 +32,7 @@ private:
     sf::Sprite sprite6;
     sf::Sprite sprite7;
     sf::Sprite sprite8;
-    sf::Sprite _background;
     sf::Sprite sprite;
-    sf::Sprite sprite_return;
 
     sf::Texture leaderboardTexture;
     sf::Sprite leaderBoardSprite;

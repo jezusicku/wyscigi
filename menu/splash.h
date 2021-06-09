@@ -10,9 +10,7 @@ private:
     int *submenu;
 
     sf::Clock _clock;
-    sf::Texture _background_texture;
     sf::Texture texture;
-    sf::Sprite _background;
     sf::Sprite sprite;
 
 public:
